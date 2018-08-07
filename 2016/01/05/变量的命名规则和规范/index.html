@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="郭翔" />
+
+
+
+<meta name="description" content="命名规则 和 命名规范">
+<meta name="keywords" content="JavaScript基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="变量的命名规则和规范">
+<meta property="og:url" content="https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/01/05/变量的命名规则和规范/index.html">
+<meta property="og:site_name" content="郭翔的itcast博客">
+<meta property="og:description" content="命名规则 和 命名规范">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-04-09T05:36:50.574Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="变量的命名规则和规范">
+<meta name="twitter:description" content="命名规则 和 命名规范">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="郭翔的itcast博客" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/timg.jpeg">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>变量的命名规则和规范 | 郭翔的itcast博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/timg.jpeg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">郭翔</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">风里雨里，传智等你！</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">home</a></li>
+                        
+                            <li><a href="/archives/">all</a></li>
+                        
+                            <li><a href="/tags/">tags</a></li>
+                        
+                            <li><a href="/about/">aboutme</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:m13301295501_1@163.com" title="Email"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6-语法/">ES6 语法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5C3/">H5C3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript基础/">JavaScript基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJS/">NodeJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebStorm/">WebStorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git和github/">git和github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unicode字符集/">unicode字符集</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">传智播客前端与移动开发学院--郭翔</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">郭翔</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/timg.jpeg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">郭翔</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">风里雨里，传智等你！</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">home</a></li>
+                
+                    <li><a href="/archives/">all</a></li>
+                
+                    <li><a href="/tags/">tags</a></li>
+                
+                    <li><a href="/about/">aboutme</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:m13301295501_1@163.com" title="Email"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-变量的命名规则和规范" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/05/变量的命名规则和规范/" class="article-date">
+      <time datetime="2016-01-05T12:42:38.000Z" itemprop="datePublished">2016-01-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      变量的命名规则和规范
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Front-end-Engineer/">Front-end Engineer</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript基础/">JavaScript基础</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="变量名的命名规则和命名规范"><a href="#变量名的命名规则和命名规范" class="headerlink" title="变量名的命名规则和命名规范"></a>变量名的命名规则和命名规范</h1><ul>
+<li>既然在代码中我们使用到了变量，那么他一定要有一些规则，不能随便瞎写</li>
+<li>有了规则以后，世界上那么多的开发者，规则不可能对所有的东西都进行整顿，那么在我们开发者中，就会有一套大家默认的书写规范诞生</li>
+<li>规则必须遵守，不遵守规则就是错了，而规范只是所有开发者约定俗成的东西，不遵守不会错，但是可能会导致你的代码别人看不懂，如果大家都没有规范，只是按照自己的意愿在写代码，那可能维护起来就成问题了</li>
+<li>变量名的规范只是很小的一个部分，在接下来的学习中，还会有更多的规范，所有的东西都是要从一开始就养成良好的习惯</li>
+<li>接下来我们就来说一说命名规则和命名规范</li>
+</ul>
+<h2 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h2><ul>
+<li>先来说一说命名规则</li>
+<li>因为这个是 ECMAScript 制定的规范，不这么写就会出错，程序就不能正常运行</li>
+</ul>
+<ol>
+<li><p>所有的变量名，只能由 数字/字母/下划线（_）/美元符（$）组成，并且不能由数字开头</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="keyword">var</span> _a;</span><br><span class="line"><span class="keyword">var</span> a_b;</span><br><span class="line"><span class="keyword">var</span> $a;</span><br><span class="line"><span class="keyword">var</span> a$b_c;</span><br><span class="line"><span class="keyword">var</span> a01;</span><br><span class="line"><span class="keyword">var</span> a$<span class="number">01</span>_02_$;</span><br><span class="line"><span class="comment">// 以上这些都是可以的</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// var 23a;</span></span><br><span class="line"><span class="comment">// var ^a;</span></span><br><span class="line"><span class="comment">// var %b32;</span></span><br><span class="line"><span class="comment">// 上面这些注释起来的都是不可以的</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>变量名里面可以有数字，但是不能以数字开头</li>
+<li>变量名里面可以有特殊符号，但是只能有 <code>_</code> 和 <code>$</code> 两种，别的符号出现都是错的</li>
+</ul>
+</li>
+<li><p>变量名不能是一些关键字或者保留字</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name;</span><br><span class="line"><span class="keyword">var</span> age;</span><br><span class="line"><span class="comment">// 变量名定义成一些单词是可以的，但是有一些单词就不可以使用</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 例如：</span></span><br><span class="line"><span class="comment">// var this;</span></span><br><span class="line"><span class="comment">// var for;</span></span><br><span class="line"><span class="comment">// var function;</span></span><br><span class="line"><span class="comment">// var class;</span></span><br><span class="line"><span class="comment">// 上买注释起来的这些就不能使用，当然还有很多</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>什么是关键字：在 ECMAScript 制定语法规则的时候，会把一些单词拿出来定义成关键字，比如：<br><code>var</code>：定义变量的关键字<br><code>for</code>：定义循环的关键字<br><code>while</code>：定义循环的关键字<br><code>function</code>：定义函数的关键字<br>…… 还有很多</li>
+<li>什么是保留字：就是 ECMAScript 规定了一些有意义的单词，留待他以后升级规则的时候使用，也不让我们当作变量名来使用，比如：<br><code>byte</code> / <code>debugger</code> / <code>static</code> / <code>boolean</code> / ……<br>其实就是他预留下来以后归ECMAScript使用而已，有些其实也没有硬性规定不让使用，只是我们在使用的时候都默认避开这些<br>还有一些其实现在的 <code>es6</code> 中就已经在使用了，以后我们慢慢都会学到，这些也不用刻意去记，一般不会影响我们的开发的</li>
+<li>其实关键字和保留字也不多，一共几十个而已，因为随着改版和升级，会有一些变化，所以这里就不整理了，自行<a href="https://www.baidu.com/s?ie=UTF-8&amp;wd=JS%E4%B8%AD%E7%9A%84%E5%85%B3%E9%94%AE%E5%AD%97%E5%92%8C%E4%BF%9D%E7%95%99%E5%AD%97" target="_blank" rel="noopener">百度一下JS中的保留字和关键字</a>就好</li>
+</ul>
+</li>
+<li><p>JS中的变量名严格区分大小写</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num;</span><br><span class="line"><span class="keyword">var</span> Num;</span><br><span class="line"><span class="keyword">var</span> nUm;</span><br><span class="line"><span class="keyword">var</span> nuM;</span><br><span class="line"><span class="keyword">var</span> nUM;</span><br><span class="line"><span class="keyword">var</span> NUm;</span><br><span class="line"><span class="comment">// 上面书写的是六个不同的变量名，不是一个</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>在JS中，变量名是很严格的，定义的时候是大写字母，使用的时候就要是大写字母</li>
+<li>如果你在定义的时候写的是 <code>var num = 10;</code> 而使用的时候是 <code>window.alert(NUM)</code>，那么是不会得到结果的</li>
+</ul>
+</li>
+</ol>
+<h2 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h2><ul>
+<li>接下来讲一讲命名规范</li>
+<li>这个规范不是官方定制的，可以不去遵守，只是开发者大家都默认遵守这个规范而已</li>
+</ul>
+<ol>
+<li><p>变量名要有一定的语义化</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 我们定义的变量名尽量有意义，比如：</span></span><br><span class="line"><span class="keyword">var</span> name; <span class="comment">// 可以表示姓名/名称之类的意思</span></span><br><span class="line"><span class="keyword">var</span> content; <span class="comment">// 可以表示内容/文章之类的意思</span></span><br><span class="line"><span class="keyword">var</span> age; <span class="comment">// 可以表示年龄的意思</span></span><br><span class="line"><span class="comment">// ...等等诸如此类的</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>尽量让你的代码可阅读性变得更高，不要总是使用 <code>a01</code> / <code>a02</code> / <code>div001</code> / … 之类的名称</li>
+<li>方便别人阅读，也方便自己维护和修改，不然你定义完变量名，过两天自己看的时候肯能都不认识了</li>
+</ul>
+</li>
+<li><p>驼峰命名</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 驼峰命名法定义的变量</span></span><br><span class="line"><span class="keyword">var</span> userName;</span><br><span class="line"><span class="keyword">var</span> userPass;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>当一个变量名由两个或者多个单词组合而成的时候，从第二个单词开始首字母大写</li>
+<li>当然这个不是硬性规定，不这么写也没事，但是大家都这么写，我们还是不要特立独行了</li>
+</ul>
+</li>
+<li><p>下划线分割</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用下划线分割的方式定义的变量</span></span><br><span class="line"><span class="keyword">var</span> user_name;</span><br><span class="line"><span class="keyword">var</span> user_pass;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在这里要特别说一下这个方法，这个不是大家都默认的写法，但也是大家可以认可的写法</li>
+<li>这个方法其实不作为规范的一种，但是也有相当一部分开发人员是喜欢这样书写变量名的，只是不如使用驼峰命名的人多</li>
+<li>这个随自己的喜好就好，喜欢哪种就用哪种，都是可以的，但是一定要选择一种去养成习惯</li>
+</ul>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>变量名的命名规则是由官方（ECMAScript）提出，所有开发者必须遵守，不然就无法正常运行程序</li>
+<li>变量名的命名规范是由社区（开发者默认）提出，大家自觉遵守的，不遵守也不会报错</li>
+<li>从定义变量名这件小事开始，养成一个良好的书写习惯，如果能做到 “代码洁癖” 就是最好的了</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2016/01/05/变量的命名规则和规范/">变量的命名规则和规范</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">郭翔</a></p>
+        <p><span>Created:</span>2016-01-05, 20:42:38</p>
+        <p><span>Updated:</span>2018-04-09, 13:36:50</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2016/01/05/变量的命名规则和规范/" title="变量的命名规则和规范">https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/01/05/变量的命名规则和规范/</a>
+            <span class="copy-path" data-clipboard-text="From https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/01/05/变量的命名规则和规范/　　By 郭翔" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/01/06/封装简单版全兼容ajax/">
+                    封装简单版全兼容ajax
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/01/05/Node-js安装/">
+                    Node.js安装
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#变量名的命名规则和命名规范"><span class="toc-number">1.</span> <span class="toc-text">变量名的命名规则和命名规范</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命名规则"><span class="toc-number">1.1.</span> <span class="toc-text">命名规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命名规范"><span class="toc-number">1.2.</span> <span class="toc-text">命名规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">1.3.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"变量的命名规则和规范　| 郭翔的itcast博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/01/06/封装简单版全兼容ajax/" title="Pre: 封装简单版全兼容ajax">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/01/05/Node-js安装/" title="Next: Node.js安装">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/10/git的常用指令/">git的常用指令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/10/github的常用功能介绍/">github的常用功能介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/08/WebStorm安装/">WebStorm安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/布局方式-flex布局/">布局方式 - flex布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/解构赋值/">解构赋值</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制之循环结构/">流程控制之循环结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制之分支结构/">流程控制之分支结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制/">流程控制</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/unicode字符集/">unicode字符集</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/JS中的内置对象-String的常用方法/">JS中的内置对象-String的常用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/使用git在GitHub上托管代码/">使用git在GitHub上托管代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-字符串/">JS中的基本数据类型-字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-数值/">JS中的基本数据类型-数值</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/git安装和配置/">git安装和配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-空/">JS中的基本数据类型-空</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-布尔/">JS中的基本数据类型-布尔</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/封装简单版全兼容ajax/">封装简单版全兼容ajax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/变量的命名规则和规范/">变量的命名规则和规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/Node-js安装/">Node.js安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/JS中的数据类型/">JS中的数据类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/JS中的变量/">JS中的变量</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/JS中的注释/">JS中的注释</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/02/如何在HTML页面引入JavaScript/">如何在HTML页面引入JavaScript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/01/JavaScript脚本语言/">JavaScript脚本语言</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 郭翔
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+             title: "a.article-title, .article-more-link a", 
+            
+             tags: ".article-tag a", 
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

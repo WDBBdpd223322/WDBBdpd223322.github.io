@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="郭翔" />
+
+
+
+<meta name="description" content="想要使用一个东西的时候一定要配置好">
+<meta name="keywords" content="git和github">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git安装和配置">
+<meta property="og:url" content="https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/01/06/git安装和配置/index.html">
+<meta property="og:site_name" content="郭翔的itcast博客">
+<meta property="og:description" content="想要使用一个东西的时候一定要配置好">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/img/git/github官网.png">
+<meta property="og:image" content="https://github.com/img/git/github注册001.png">
+<meta property="og:image" content="https://github.com/img/git/github注册002.png">
+<meta property="og:image" content="https://github.com/img/git/github注册003.png">
+<meta property="og:image" content="https://github.com/img/git/github注册004.png">
+<meta property="og:image" content="https://github.com/img/git/github注册005.png">
+<meta property="og:image" content="https://github.com/img/git/git官网下载安装包.png">
+<meta property="og:image" content="https://github.com/img/git/git安装001.png">
+<meta property="og:image" content="https://github.com/img/git/git安装002.png">
+<meta property="og:image" content="https://github.com/img/git/git安装003.png">
+<meta property="og:image" content="https://github.com/img/git/git安装004.png">
+<meta property="og:image" content="https://github.com/img/git/git安装005.png">
+<meta property="og:image" content="https://github.com/img/git/git安装006.png">
+<meta property="og:image" content="https://github.com/img/git/git安装007.png">
+<meta property="og:image" content="https://github.com/img/git/git安装008.png">
+<meta property="og:image" content="https://github.com/img/git/git安装009.png">
+<meta property="og:image" content="https://github.com/img/git/git安装010.png">
+<meta property="og:image" content="https://github.com/img/git/git安装011.png">
+<meta property="og:image" content="https://github.com/img/git/git安装012.jpg">
+<meta property="og:updated_time" content="2018-04-25T08:42:15.054Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git安装和配置">
+<meta name="twitter:description" content="想要使用一个东西的时候一定要配置好">
+<meta name="twitter:image" content="https://github.com/img/git/github官网.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="郭翔的itcast博客" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/timg.jpeg">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>git安装和配置 | 郭翔的itcast博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/timg.jpeg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">郭翔</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">风里雨里，传智等你！</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">home</a></li>
+                        
+                            <li><a href="/archives/">all</a></li>
+                        
+                            <li><a href="/tags/">tags</a></li>
+                        
+                            <li><a href="/about/">aboutme</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:m13301295501_1@163.com" title="Email"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6-语法/">ES6 语法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5C3/">H5C3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript基础/">JavaScript基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJS/">NodeJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebStorm/">WebStorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git和github/">git和github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unicode字符集/">unicode字符集</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">传智播客前端与移动开发学院--郭翔</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">郭翔</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/timg.jpeg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">郭翔</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">风里雨里，传智等你！</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">home</a></li>
+                
+                    <li><a href="/archives/">all</a></li>
+                
+                    <li><a href="/tags/">tags</a></li>
+                
+                    <li><a href="/about/">aboutme</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:m13301295501_1@163.com" title="Email"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-git安装和配置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/06/git安装和配置/" class="article-date">
+      <time datetime="2016-01-06T05:49:09.000Z" itemprop="datePublished">2016-01-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git安装和配置
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Development-Environment/">Development Environment</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git和github/">git和github</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="git和github"><a href="#git和github" class="headerlink" title="git和github"></a>git和github</h1><ul>
+<li>首先我们一定要知道的一点就是，git 和 github 是两个东西，他们之间有联系，但是并不是一个东西</li>
+</ul>
+<h2 id="了解git和github"><a href="#了解git和github" class="headerlink" title="了解git和github"></a>了解git和github</h2><ul>
+<li>在说git之前，我们先要了解一个概念，叫做 “版本控制（Version control）”<ul>
+<li>版本控制系统是任何能让你了解到一个文件的历史，以及它的发展过程的系统</li>
+<li>例如，我们在开发的时候经常遇到的一个问题：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">你的文件夹</span><br><span class="line"> - xxx项目</span><br><span class="line">   + xxx项目最初版</span><br><span class="line">   + xxx项目第一次修改</span><br><span class="line">   + xxx项目第二次修改</span><br><span class="line">   + xxx项目第三次修改</span><br><span class="line">   + xxx项目第四次修改</span><br><span class="line">   + xxx项目第N次修改</span><br><span class="line">   + xxx项目第N次修改后添加xxx功能</span><br><span class="line">   + xxx项目第N次修改后添加xxx功能后第一次修改</span><br><span class="line">   + xxx项目第N次修改后添加xxx功能后第二次修改</span><br><span class="line">   + xxx项目第N次修改后添加xxx功能后第三次修改</span><br><span class="line">   + xxx项目最终版</span><br><span class="line">   + xxx项目最终版第二次</span><br><span class="line">   + xxx项目最终版第三次</span><br><span class="line">   + xxx项目最最终版</span><br><span class="line">   + xxx项目最最终版第二次</span><br><span class="line">   + xxx项目最最最终版</span><br><span class="line">   + 本人以死</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>这个时候我们就有了版本的问题，这个只是一个最简单的展示</li>
+<li>这样看起来就不是很好了，尤其是当你有一天还需要以前的版本的时候，你就疯了，因为我们好不容易写的东西，还要在删除了</li>
+<li>这个就是一个文件的发展过程</li>
+<li>git就是来版我们管理这个过程的一个工具，接下来我们就来了解一下 git</li>
+</ul>
+</blockquote>
+<h3 id="什么是git"><a href="#什么是git" class="headerlink" title="什么是git"></a>什么是git</h3><ul>
+<li>Git 是一种专为处理文本文件而设计的版本控制系统。因为，归根到底，这就是代码的本质：一堆堆以某种方式联合在一起的文本文件。Git 是一个可安装应用，它允许你对你自己所做的更改进行注释，用以创建易于导航的系统历史</li>
+<li>那么， Git 做了什么，是简单地保存文件所做不到的呢？<ul>
+<li>从根本上讲，文件保存就是一个简化的版本控制系统，但坦率地说，它并不是一个好用的系统，因为它只能前进。当然，你也许会争论“撤消”按钮可以让你的文件回滚到以前的状态。但我们都清楚，“撤消”按钮有其局限性，最明显示的是，在关闭文件时，文件的过去也随之丢失</li>
+</ul>
+</li>
+<li>另外，文件保存是非常个人化的。它不能够显示整个系统的历史，只能够显示该文件的。针对这一点，你可能会想，“嗯，我不是一个工程师，我不需要为系统烦恼”。我愿意花些时间来解释一下，很多事情你认为不是“系统”，而实际上它们就是。</li>
+<li>Git 就是一个管理你的文件的系统，可以让你在你的文件作出修改之后，在回到之前的样子，如果对之前的样子不满意，还可以在回来<ul>
+<li>简单来说，就是让我们有一种穿梭时空的感觉，比如你今天想看到昨天的版本，那你就可以把你的文件夹里面的内容会推倒昨天的样子，然后你又想回来，还可以前进到今天的样子，这就是git的功能</li>
+<li>就是用来记录你的每一次修改，让你在每一次修改之前切换自如</li>
+</ul>
+</li>
+</ul>
+<h3 id="什么是github"><a href="#什么是github" class="headerlink" title="什么是github"></a>什么是github</h3><ul>
+<li>我们聊github之前，先来了解几个计算机术语<ul>
+<li>远程（remote）仅仅意味着联网（与“本地”的意思相反）</li>
+<li>仓库（repository，经常简写为“repo”），就是一个具备 Git 权限的文件夹</li>
+<li>远程仓库，就是在网上的一个 git 权限文件夹</li>
+<li>推送（push），就是把本地的文件上传到远程仓库</li>
+<li>终端（terminal），在这里简单的来说就是我们的电脑</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>github，其实是一个网站，你可以在里面建立一些远程仓库，来存储你的文件（可以想像成百度云盘一样的东西）</li>
+<li>看起来好像没有什么大用，只是把文件保存在了网上而已，但是它的强大就在于控制版本</li>
+<li>因此，Github 就是让你把工作（通过Git提交进行注解）存储在了一个指定的在线文件夹（repo）</li>
+<li>github还有别的重要的功能，他也是一个社区，类似于博客一样的东西，只不过在github这个社区里面的人都是开发人员</li>
+</ul>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><ul>
+<li>简单来说，git就是一个版本控制软件，github是一个网站</li>
+<li>可以通过git，把本地的文件推送到github这个网站上保存，做到多终端异地协同开发</li>
+</ul>
+<h2 id="注册github账号"><a href="#注册github账号" class="headerlink" title="注册github账号"></a>注册github账号</h2><ul>
+<li>因为 git 和 github 的不可分割性质，所以我们需要先注册一个 github 的账号</li>
+<li>这里注册账号不影响 git 的安装，只是一些 git 的配置需要有一个 github 的账号</li>
+<li>所以先安装 git，再注册账号，在进行配置也是可以的</li>
+<li>在这里我们先注册账号，然后安装 git，安装完直接进行配置就好了</li>
+</ul>
+<ol>
+<li>打开<a href="https://github.com/">github官网</a>，点击 <code>sing up</code> 按钮进行注册<br><img src="/img/git/github官网.png" alt="github官网注册"></li>
+<li>会跳转到如下界面，填入 用户名/邮箱/密码 后点击 <code>create an account</code> 就可以了<br><img src="/img/git/github注册001.png" alt="github注册"></li>
+<li>选择一个免费的就行，如果你想，选择一个付费的也可以，点击 <code>finish sign up</code> 按钮<br><img src="/img/git/github注册002.png" alt="github注册001"></li>
+<li>会出现如下界面，点击 <code>new repository</code><br><img src="/img/git/github注册003.png" alt="github注册001"></li>
+<li>发现提示你邮箱地址未验证<br><img src="/img/git/github注册004.png" alt="github注册001"></li>
+<li>登录你注册时的邮箱，进行验证<br><img src="/img/git/github注册005.png" alt="github注册001"></li>
+</ol>
+<ul>
+<li>到此，注册账号已经成功，一定要记住自己用户名/邮箱/密码</li>
+<li>接下来我们就要安装和配置git了</li>
+</ul>
+<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><h3 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h3><ul>
+<li>可以从<a href="https://git-scm.com/" target="_blank" rel="noopener">git官网</a>下载安装包，挑一个适合自己电脑的就好<br><img src="/img/git/git官网下载安装包.png" alt="git官网下载安装包"></li>
+</ul>
+<ul>
+<li>下载好以后可以得到一个安装软件，不同系统的电脑得到的安装包不一样，但是安装过程基本一样</li>
+<li>这里以 windows 系统下的安装包为例<ul>
+<li>Git-2.11.0.3-64-bit.exe</li>
+</ul>
+</li>
+</ul>
+<h3 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h3><ol>
+<li>双击下载好的git安装包(上面列出的那个 <code>.exe</code> 文件)，弹出提示框，如下图：<br><img src="/img/git/git安装001.png" alt="git安装001"></li>
+<li>直接点击 <code>next</code> 进入下一步，选择安装路径，如下图：<br><img src="/img/git/git安装002.png" alt="git安装002"></li>
+<li>选择好安装路径后，点击 <code>next</code> 进入下一步，弹出安装配置窗口，包括git命令行、git图形窗口等，如下图所示：<br><img src="/img/git/git安装003.png" alt="git安装003"><ul>
+<li>安装图中打勾的位置打勾</li>
+</ul>
+</li>
+<li>按照上述默认配置，直接点击 <code>next</code> 进入下一步，弹出 <code>选择菜单开始文件</code> 的窗口，如下图所示：<br><img src="/img/git/git安装004.png" alt="git安装004"></li>
+<li>按照默认路径即可，直接点击 <code>next</code>，进入下一步，进入 <code>调整路径环境</code> 窗口，如下图所示：<br><img src="/img/git/git安装005.png" alt="git安装005"><ul>
+<li>这里需要注意了：<ul>
+<li>第一项：直接安装，不会配置git命令的环境变量</li>
+<li>第二项：会自动配置好git命令的环境变量</li>
+<li>第三项：git命令和unix工具命令都会添加到环境变量</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>由于第一项不会配置环境变量，第三项会添加可选unix工具，基本没用，所以选第二项，然后点击 <code>next</code> 进入下一步，如下图所示：<br><img src="/img/git/git安装006.png" alt="git安装006"></li>
+<li>选择第一项，同步下载更新文件时使用windows风格，提交文件时使用unix风格，尽量保证同步兼容。选好后，点击 <code>next</code> 进入下一步，如下图所示：<br><img src="/img/git/git安装007.png" alt="git安装007"></li>
+<li>选择第一项，安装后 <code>git bash</code> 的终端使用起来比较好用。选好后，点击 <code>next</code> 进入下一步。如下图所示：<br><img src="/img/git/git安装008.png" alt="git安装008"></li>
+<li>按照默认配置，直接点击 <code>next</code> 进入下一步。如下图所示：<br><img src="/img/git/git安装009.png" alt="git安装009"></li>
+<li>直接点击 <code>install</code> 进行安装即可，安装完成如下图所示：<br><img src="/img/git/git安装010.png" alt="git安装010"><ul>
+<li>到此为止，git成功安装</li>
+</ul>
+</li>
+<li>在电脑中任意位置点击鼠标右键，会发现多了两个 <code>git</code> 相关选项，点击 <code>git bash</code> 就会打开git命令窗口。如下图所示：<br><img src="/img/git/git安装011.png" alt="git安装011"></li>
+</ol>
+<h3 id="安装成功检测版本号"><a href="#安装成功检测版本号" class="headerlink" title="安装成功检测版本号"></a>安装成功检测版本号</h3><ul>
+<li>当我们打开 <code>git bash</code> 窗口后，已经证明 git 安装成功了，但是还是要看一下git的信息</li>
+<li>打开cmd命令行（mac就打开终端），输入 <code>git</code> 命令后敲击回车，会出现如下信息：<br><img src="/img/git/git安装012.jpg" alt="git安装012"></li>
+</ul>
+<h3 id="做git的配置"><a href="#做git的配置" class="headerlink" title="做git的配置"></a>做git的配置</h3><ul>
+<li>为了我们以后和 <code>github</code> 关联，还有为了使用 <code>github</code> 托管代码作准备，我们还是要进行一些简单的配置</li>
+<li>要配置一下自己电脑上的 <code>git配置信息</code></li>
+</ul>
+<ol>
+<li><p>首先打开cmd命令行（mac打开终端），输入指令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git config --list</span><br></pre></td></tr></table></figure>
+<ul>
+<li>会显示git在当前电脑上的一些配置信息</li>
+</ul>
+</li>
+<li><p>要配置的是你个人的用户名称和电子邮件地址。这两条配置很重要，每次 Git 提交时都会引用这两条信息，说明是谁提交了更新，所以会随更新内容一起被永久纳入历史记录：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git config --global user.name "guoxiang"</span><br><span class="line"><span class="meta">$</span> git config --global user.email "guoxiang@guoxiang.com"</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>user.name</code> 一项填入你的电脑名称就可以</li>
+<li><code>user.email</code> 你的邮箱就好</li>
+<li>填好以后再次打开 “配置信息列表”，就可以看到最下面多了两个刚刚配置好的信息</li>
+<li>如果用了 <code>--global</code> 选项，那么更改的配置文件就是位于你用户主目录下的那个，以后你所有的项目都会默认使用这里配置的用户信息。如果要在某个特定的项目中使用其他名字或者电邮，只要去掉 <code>--global</code> 选项重新配置即可，新的设定保存在当前项目的 <code>.git/config</code> 文件里</li>
+</ul>
+</li>
+<li><p>接下来要设置的是默认使用的文本编辑器。Git 需要你输入一些额外消息的时候，会自动调用一个外部文本编辑器给你用。默认会使用操作系统指定的默认编辑器，一般可能会是 <code>Vi</code> 或者 <code>Vim</code>。如果你有其他偏好，比如 <code>Emacs</code> 的话，可以重新设置：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git config --global core.editor emacs</span><br></pre></td></tr></table></figure>
+<ul>
+<li>这个不是必要的配置，如果你是初学者，还不太会使用git的话，不要进行这个配置</li>
+</ul>
+</li>
+<li><p>还有一个比较常用的是，在解决合并冲突时使用哪种差异分析工具。比如要改用 <code>vimdiff</code> 的话：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git config --global merge.tool vimdiff</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Git 可以理解 <code>kdiff3</code>，<code>tkdiff</code>，<code>meld</code>，<code>xxdiff</code>，<code>emerge</code>，<code>vimdiff</code>，<code>gvimdiff</code>，<code>ecmerge</code>，和 <code>opendiff</code> 等合并工具的输出信息。当然，你也可以指定使用自己开发的工具</li>
+<li>这个不是必要的配置，如果你是初学者，还不太会使用git的话，不要进行这个配置</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>到此，git的安装和配置就全部完成了，接下来就可以使用 <code>git</code> 在 <code>github</code> 上面托管自己的代码了</li>
+<li>其实，在 github 上面托管代码，如果我们不是经常切换 github 账号的话，我们可以配置一个 <code>密钥</code>，会比较省事，但是这里不说这个配置，会在<a href="https://wdbbdpd223322.github.io/2018/04/10/%E4%BD%BF%E7%94%A8git%E5%9C%A8GitHub%E4%B8%8A%E6%89%98%E7%AE%A1%E4%BB%A3%E7%A0%81/" target="_blank" rel="noopener">使用git在GitHub上托管代码</a>文章中分享</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2016/01/06/git安装和配置/">git安装和配置</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">郭翔</a></p>
+        <p><span>Created:</span>2016-01-06, 13:49:09</p>
+        <p><span>Updated:</span>2018-04-25, 16:42:15</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2016/01/06/git安装和配置/" title="git安装和配置">https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/01/06/git安装和配置/</a>
+            <span class="copy-path" data-clipboard-text="From https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/01/06/git安装和配置/　　By 郭翔" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/01/06/JS中的基本数据类型-数值/">
+                    JS中的基本数据类型-数值
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/01/06/JS中的基本数据类型-空/">
+                    JS中的基本数据类型-空
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git和github"><span class="toc-number">1.</span> <span class="toc-text">git和github</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#了解git和github"><span class="toc-number">1.1.</span> <span class="toc-text">了解git和github</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是git"><span class="toc-number">1.1.1.</span> <span class="toc-text">什么是git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是github"><span class="toc-number">1.1.2.</span> <span class="toc-text">什么是github</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结论"><span class="toc-number">1.1.3.</span> <span class="toc-text">结论</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注册github账号"><span class="toc-number">1.2.</span> <span class="toc-text">注册github账号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装git"><span class="toc-number">1.3.</span> <span class="toc-text">安装git</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下载安装包"><span class="toc-number">1.3.1.</span> <span class="toc-text">下载安装包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开始安装"><span class="toc-number">1.3.2.</span> <span class="toc-text">开始安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装成功检测版本号"><span class="toc-number">1.3.3.</span> <span class="toc-text">安装成功检测版本号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#做git的配置"><span class="toc-number">1.3.4.</span> <span class="toc-text">做git的配置</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"git安装和配置　| 郭翔的itcast博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/01/06/JS中的基本数据类型-数值/" title="Pre: JS中的基本数据类型-数值">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/01/06/JS中的基本数据类型-空/" title="Next: JS中的基本数据类型-空">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/10/git的常用指令/">git的常用指令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/10/github的常用功能介绍/">github的常用功能介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/08/WebStorm安装/">WebStorm安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/布局方式-flex布局/">布局方式 - flex布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/解构赋值/">解构赋值</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制之循环结构/">流程控制之循环结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制之分支结构/">流程控制之分支结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制/">流程控制</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/unicode字符集/">unicode字符集</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/JS中的内置对象-String的常用方法/">JS中的内置对象-String的常用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/使用git在GitHub上托管代码/">使用git在GitHub上托管代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-字符串/">JS中的基本数据类型-字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-数值/">JS中的基本数据类型-数值</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/git安装和配置/">git安装和配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-空/">JS中的基本数据类型-空</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-布尔/">JS中的基本数据类型-布尔</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/封装简单版全兼容ajax/">封装简单版全兼容ajax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/变量的命名规则和规范/">变量的命名规则和规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/Node-js安装/">Node.js安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/JS中的数据类型/">JS中的数据类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/JS中的变量/">JS中的变量</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/JS中的注释/">JS中的注释</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/02/如何在HTML页面引入JavaScript/">如何在HTML页面引入JavaScript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/01/JavaScript脚本语言/">JavaScript脚本语言</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 郭翔
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+             title: "a.article-title, .article-more-link a", 
+            
+             tags: ".article-tag a", 
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

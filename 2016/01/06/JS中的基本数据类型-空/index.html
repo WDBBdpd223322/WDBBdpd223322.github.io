@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="郭翔" />
+
+
+
+<meta name="description" content="JS中的基本数据类型 - 空">
+<meta name="keywords" content="JavaScript基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS中的基本数据类型-空">
+<meta property="og:url" content="https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/01/06/JS中的基本数据类型-空/index.html">
+<meta property="og:site_name" content="郭翔的itcast博客">
+<meta property="og:description" content="JS中的基本数据类型 - 空">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-05-03T05:54:30.116Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS中的基本数据类型-空">
+<meta name="twitter:description" content="JS中的基本数据类型 - 空">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="郭翔的itcast博客" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/timg.jpeg">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>JS中的基本数据类型-空 | 郭翔的itcast博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/timg.jpeg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">郭翔</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">风里雨里，传智等你！</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">home</a></li>
+                        
+                            <li><a href="/archives/">all</a></li>
+                        
+                            <li><a href="/tags/">tags</a></li>
+                        
+                            <li><a href="/about/">aboutme</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:m13301295501_1@163.com" title="Email"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6-语法/">ES6 语法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5C3/">H5C3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript基础/">JavaScript基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJS/">NodeJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebStorm/">WebStorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git和github/">git和github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unicode字符集/">unicode字符集</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">传智播客前端与移动开发学院--郭翔</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">郭翔</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/timg.jpeg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">郭翔</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">风里雨里，传智等你！</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">home</a></li>
+                
+                    <li><a href="/archives/">all</a></li>
+                
+                    <li><a href="/tags/">tags</a></li>
+                
+                    <li><a href="/about/">aboutme</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:m13301295501_1@163.com" title="Email"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-JS中的基本数据类型-空" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/06/JS中的基本数据类型-空/" class="article-date">
+      <time datetime="2016-01-06T04:54:59.000Z" itemprop="datePublished">2016-01-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JS中的基本数据类型-空
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Front-end-Engineer/">Front-end Engineer</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript基础/">JavaScript基础</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="JS中的基本数据类型"><a href="#JS中的基本数据类型" class="headerlink" title="JS中的基本数据类型"></a>JS中的基本数据类型</h1><ul>
+<li>本张旨在介绍JS中的基本数据类型其中的一种 – 空类型</li>
+<li>默认已知JS中的所有数据类型</li>
+<li>JS中所有数据类型的分类简介请移步<a href="/2016/01/04/JS中的数据类型">JS中的数据类型</a></li>
+</ul>
+<h2 id="Null和Undefined（空）"><a href="#Null和Undefined（空）" class="headerlink" title="Null和Undefined（空）"></a>Null和Undefined（空）</h2><ul>
+<li>在JS中有两种数据类型，<code>Null</code> 和 <code>Undefined</code> 都是空的意思</li>
+<li>虽然两个都是空，但是这是两个完全不同的数据类型，也有着完全不同的两个意思</li>
+<li>为什么要放在一起说呢，因为这两个完全不同的数据类型，之间又有着一些联系</li>
+</ul>
+<h3 id="不得不说的一些历史遗留问题"><a href="#不得不说的一些历史遗留问题" class="headerlink" title="不得不说的一些历史遗留问题"></a>不得不说的一些历史遗留问题</h3><ul>
+<li>在学习 <code>Null</code> 和 <code>Undefined</code> 之前，我们一定要说一下他们两个的历史</li>
+<li>他们两个的值<ol>
+<li><code>Null</code> 数据类型只有一个值，就是：<code>null</code></li>
+<li><code>Undefined</code> 数据类型只有一个值，就是：<code>undefined</code></li>
+</ol>
+</li>
+<li>大多数计算机语言，有且仅有一个表示 “无” 的值，比如，C语言的 <code>NULL</code>，Java语言的 <code>null</code>，Python语言的 <code>None</code>，Ruby语言的 <code>nil</code></li>
+<li>有点奇怪的是，JavaScript语言居然有两个表示 “无” 的值：<code>undefined</code> 和 <code>null</code></li>
+<li>这与JavaScript的历史有关。1995年JavaScript诞生时，最初像Java一样，只设置了 <code>null</code> 作为表示 “无” 的值</li>
+<li>根据C语言的传统，null被设计成可以自动转为0</li>
+<li>但是，JavaScript的设计者Brendan Eich，觉得这样做还不够，有两个原因<ol>
+<li>null像在Java里一样，被当成一个对象。但是，JavaScript的数据类型分成原始类型（primitive）和合成类型（complex）两大类，Brendan Eich 觉得表示 “无” 的值最好不是对象</li>
+<li>JavaScript的最初版本没有包括错误处理机制，发生数据类型不匹配时，往往是自动转换类型或者默默地失败。Brendan Eich 觉得，如果 <code>null</code> 自动转为0，很不容易发现错误</li>
+</ol>
+</li>
+<li>因此，Brendan Eich又设计了一个undefined<ul>
+<li>JavaScript的最初版本是这样区分的：<code>null</code> 是一个表示 “无” 的对象，转为数值时为0；<code>undefined</code> 是一个表示 “无” 的原始值，转为数值时为NaN<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log( <span class="built_in">Number</span>(<span class="literal">undefined</span>) ); <span class="comment">//=&gt; NaN</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="built_in">Number</span>(<span class="literal">null</span>) ); <span class="comment">//=&gt; 0</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>这些只是一些历史问题，我们不需要去记住他，看看了解一下就好，接下来我们讲一讲现在的 <code>Null</code> 和 <code>Undefined</code></li>
+</ul>
+<h3 id="Null"><a href="#Null" class="headerlink" title="Null"></a>Null</h3><ul>
+<li>Null 只有一个值，就是 <code>null</code></li>
+<li>从逻辑角度来看，<code>null</code> 值表示一个空对象指针，而这也正是使用 <code>typeof</code> 操作符检测 <code>null</code> 值会返回 <code>object</code> 的原因<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">null</span>); <span class="comment">//=&gt; object</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>上面使用的一个 <code>typeof</code> 关键字，这个关键字就是用来检测数据类型的，详细解释请移步<a href="">检测数据类型的方法-typeof</a></li>
+<li>在使用的时候，一般来说我们不会得到一个 <code>null</code>，只能由我们自己赋值<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>所以一般来说，如果定义的变量准备在将来用来保存对象，那么最好将该变量初始化为null而不是其他值。这样一来，只要直接检查null值就可以知道相应的变量是否已经保存了一个对象的引用</li>
+<li>这也只是一个开发者默认的使用方式</li>
+</ul>
+<h3 id="Undefined"><a href="#Undefined" class="headerlink" title="Undefined"></a>Undefined</h3><ul>
+<li>Undefined 数据类型也是只有一个值，就是 <code>undefined</code></li>
+<li></li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2016/01/06/JS中的基本数据类型-空/">JS中的基本数据类型-空</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">郭翔</a></p>
+        <p><span>Created:</span>2016-01-06, 12:54:59</p>
+        <p><span>Updated:</span>2018-05-03, 13:54:30</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2016/01/06/JS中的基本数据类型-空/" title="JS中的基本数据类型-空">https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/01/06/JS中的基本数据类型-空/</a>
+            <span class="copy-path" data-clipboard-text="From https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/01/06/JS中的基本数据类型-空/　　By 郭翔" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/01/06/git安装和配置/">
+                    git安装和配置
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/01/06/JS中的基本数据类型-布尔/">
+                    JS中的基本数据类型-布尔
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JS中的基本数据类型"><span class="toc-number">1.</span> <span class="toc-text">JS中的基本数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Null和Undefined（空）"><span class="toc-number">1.1.</span> <span class="toc-text">Null和Undefined（空）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#不得不说的一些历史遗留问题"><span class="toc-number">1.1.1.</span> <span class="toc-text">不得不说的一些历史遗留问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Null"><span class="toc-number">1.1.2.</span> <span class="toc-text">Null</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Undefined"><span class="toc-number">1.1.3.</span> <span class="toc-text">Undefined</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"JS中的基本数据类型-空　| 郭翔的itcast博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/01/06/git安装和配置/" title="Pre: git安装和配置">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/01/06/JS中的基本数据类型-布尔/" title="Next: JS中的基本数据类型-布尔">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/10/git的常用指令/">git的常用指令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/10/github的常用功能介绍/">github的常用功能介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/08/WebStorm安装/">WebStorm安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/布局方式-flex布局/">布局方式 - flex布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/解构赋值/">解构赋值</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制之循环结构/">流程控制之循环结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制之分支结构/">流程控制之分支结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制/">流程控制</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/unicode字符集/">unicode字符集</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/JS中的内置对象-String的常用方法/">JS中的内置对象-String的常用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/使用git在GitHub上托管代码/">使用git在GitHub上托管代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-字符串/">JS中的基本数据类型-字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-数值/">JS中的基本数据类型-数值</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/git安装和配置/">git安装和配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-空/">JS中的基本数据类型-空</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-布尔/">JS中的基本数据类型-布尔</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/封装简单版全兼容ajax/">封装简单版全兼容ajax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/变量的命名规则和规范/">变量的命名规则和规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/Node-js安装/">Node.js安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/JS中的数据类型/">JS中的数据类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/JS中的变量/">JS中的变量</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/JS中的注释/">JS中的注释</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/02/如何在HTML页面引入JavaScript/">如何在HTML页面引入JavaScript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/01/JavaScript脚本语言/">JavaScript脚本语言</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 郭翔
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+             title: "a.article-title, .article-more-link a", 
+            
+             tags: ".article-tag a", 
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

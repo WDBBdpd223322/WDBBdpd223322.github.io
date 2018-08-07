@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="郭翔" />
+
+
+
+<meta name="description" content="JS里面的流程控制 -- 什么是循环结构">
+<meta name="keywords" content="JavaScript基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="流程控制之循环结构">
+<meta property="og:url" content="https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/01/07/流程控制之循环结构/index.html">
+<meta property="og:site_name" content="郭翔的itcast博客">
+<meta property="og:description" content="JS里面的流程控制 -- 什么是循环结构">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-04-22T14:13:52.498Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="流程控制之循环结构">
+<meta name="twitter:description" content="JS里面的流程控制 -- 什么是循环结构">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="郭翔的itcast博客" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/timg.jpeg">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>流程控制之循环结构 | 郭翔的itcast博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/timg.jpeg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">郭翔</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">风里雨里，传智等你！</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">home</a></li>
+                        
+                            <li><a href="/archives/">all</a></li>
+                        
+                            <li><a href="/tags/">tags</a></li>
+                        
+                            <li><a href="/about/">aboutme</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:m13301295501_1@163.com" title="Email"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6-语法/">ES6 语法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5C3/">H5C3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript基础/">JavaScript基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJS/">NodeJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebStorm/">WebStorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git和github/">git和github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unicode字符集/">unicode字符集</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">传智播客前端与移动开发学院--郭翔</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">郭翔</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/timg.jpeg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">郭翔</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">风里雨里，传智等你！</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">home</a></li>
+                
+                    <li><a href="/archives/">all</a></li>
+                
+                    <li><a href="/tags/">tags</a></li>
+                
+                    <li><a href="/about/">aboutme</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:m13301295501_1@163.com" title="Email"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-流程控制之循环结构" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/07/流程控制之循环结构/" class="article-date">
+      <time datetime="2016-01-07T12:25:57.000Z" itemprop="datePublished">2016-01-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      流程控制之循环结构
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Front-end-Engineer/">Front-end Engineer</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript基础/">JavaScript基础</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="JS中的流程控制-之-循环结构"><a href="#JS中的流程控制-之-循环结构" class="headerlink" title="JS中的流程控制 之 循环结构"></a>JS中的流程控制 之 循环结构</h1><h2 id="什么叫流程控制"><a href="#什么叫流程控制" class="headerlink" title="什么叫流程控制"></a>什么叫流程控制</h2><ul>
+<li>在之前有介绍过流程控制语句，在这里就不多赘述了</li>
+<li>如不清楚，请移步 <a href="/2016/01/07/流程控制/">流程控制</a></li>
+<li>本章主要讲解 循环结构</li>
+</ul>
+<h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2><ul>
+<li>之前聊过，循环结构就像玩游戏<ul>
+<li>当这个页面的代码从上到下的执行的时候，就好像你在一点一点的过关</li>
+<li>碰到一个循环结构语句的时候，就是你要打 BOSS 了，通过条件判断决定你打不打得过</li>
+<li>打不过就回去继续练级，就是重复执行某一段代码</li>
+<li>然后再来打 BOSS，在判断打不打得过</li>
+<li>一直重复执行，直到满足条件了，那就那就离开循环，继续执行后面的代码，也就是打完 BOSS 以后，继续后面的关卡</li>
+</ul>
+</li>
+<li>首先我们要明白，循环一定要满足几个条件，才能形成循环<ul>
+<li>有一个初始值，也就是说，一定要有一个值来进行判断</li>
+<li>有一个判断的条件，也就是要靠判断来决定自己是不是满足条件</li>
+<li>重复去执行的代码块，因为循环的根本就是重复执行某一段代码</li>
+<li>在重复执行的过程中，一定要对自己进行一些改变，不然就会一直循环下去，变成死循环了</li>
+</ul>
+</li>
+<li>循环结构主要是四种语法<ul>
+<li><code>while</code> 循环</li>
+<li><code>do while</code> 循环</li>
+<li><code>for</code> 循环</li>
+<li><code>for in</code> 循环</li>
+</ul>
+</li>
+<li>接下来我们就一一介绍一下四种循环方式</li>
+</ul>
+<h3 id="WHILE-循环"><a href="#WHILE-循环" class="headerlink" title="WHILE 循环"></a>WHILE 循环</h3><ul>
+<li><code>while</code>，中文就是 “当…时”，也就是说，当满足什么条件的时候就做什么事</li>
+<li>语法：<ul>
+<li><code>while</code>：定义循环关键字</li>
+<li><code>()</code>：定义循环中判断的条件</li>
+<li><code>{}</code>：重复执行的代码</li>
+</ul>
+</li>
+<li>先来看一下语法结构<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个初始值</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line"><span class="comment">// 通过条件进行判断，看看是否满足条件</span></span><br><span class="line"><span class="keyword">while</span> ( num &lt; <span class="number">3</span> ) &#123;</span><br><span class="line">  <span class="comment">// 满足条件就会执行这里面的代码</span></span><br><span class="line">  <span class="built_in">console</span>.log( num );</span><br><span class="line">  <span class="comment">// 让自己作出一些改变，这里做的就是让自身加一</span></span><br><span class="line">  num++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'循环结束了'</span> )</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>这就是一个最简单的 <code>while</code> 循环，接下来咱们来解析一下代码的执行过程<ul>
+<li>首先，定义 <code>num</code> 的初始值为 0 </li>
+<li>然后进入了 <code>while</code> 循环，进行条件判断，发现 <code>num &lt; 3</code> 得到的结果为 <code>true</code>，那么就会执行后面代码块中的代码</li>
+<li>执行代码的时候，控制台会输出 <code>//=&gt; 0</code>，因为当前就为 0</li>
+<li>最后进行改变，让自己加 1，这个时候 <code>num</code> 的值就变成 1 了</li>
+<li>接下来就是循环了，又一次进行判断，发现 <code>num &lt; 3</code> 得到的结果为 <code>true</code>，那么就会继续执行后面代码块中的代码</li>
+<li>执行代码的时候，控制台会输出 <code>//=&gt; 1</code>，因为经过之前的自增，<code>num</code> 已经变成 1 了</li>
+<li>然后又进行改变，让自己加 1，这个时候 <code>num</code> 的值就变成 2 了</li>
+<li>接下来又进行判断了，发现 <code>num &lt; 3</code> 得到的结果为 <code>true</code>，那么就会继续执行后面代码块中的代码</li>
+<li>执行代码的时候，控制台会输出 <code>//=&gt; 2</code>，因为经过之前的自增，<code>num</code> 已经变成 2 了</li>
+<li>然后又进行改变，让自己加 1，这个时候 <code>num</code> 的值就变成 3 了</li>
+<li>然后又一次进行判断，发现 <code>num &lt; 3</code> 得到的结果为 <code>false</code> 了，那么就不会去执行后面代码块中的代码了</li>
+<li>此时循环结束，继续执行循环后面的代码（此时我们进入下一关了）</li>
+<li>最后输出 <code>//=&gt; 循环结束了</code></li>
+</ul>
+</li>
+<li>这就是一个完整的循环过程了，之前说了，循环就像游戏一样，接下来给一个代码，打个 BOSS 试试<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一次进入游戏，等级为 0</span></span><br><span class="line"><span class="keyword">var</span> level = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'进入第一个城市'</span> );</span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'准备进入第二个城市'</span> );</span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'见到守卫者，准备战斗'</span> );</span><br><span class="line"><span class="built_in">console</span>.log();</span><br><span class="line"><span class="keyword">while</span> ( level &lt; <span class="number">3</span> ) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log( <span class="string">'没有打过，继续练级'</span> );</span><br><span class="line">  <span class="comment">// 等级上涨 1</span></span><br><span class="line">  level++;</span><br><span class="line">  <span class="built_in">console</span>.log( level + <span class="string">'级了！'</span> );</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log();</span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'打败 BOSS'</span> );</span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'进入第二个城市了'</span> );</span><br><span class="line"></span><br><span class="line"><span class="comment">// 最终控制台输出结果</span></span><br><span class="line"><span class="comment">//=&gt; 进入第一个城市</span></span><br><span class="line"><span class="comment">//=&gt; 准备进入第二个城市</span></span><br><span class="line"><span class="comment">//=&gt; 见到守卫者，准备战斗</span></span><br><span class="line"><span class="comment">//=&gt;</span></span><br><span class="line"><span class="comment">//=&gt; 没有打过，继续练级</span></span><br><span class="line"><span class="comment">//=&gt; 1级了</span></span><br><span class="line"><span class="comment">//=&gt; 没有打过，继续练级</span></span><br><span class="line"><span class="comment">//=&gt; 2级了</span></span><br><span class="line"><span class="comment">//=&gt; 没有打过，继续练级</span></span><br><span class="line"><span class="comment">//=&gt; 3级了</span></span><br><span class="line"><span class="comment">//=&gt;</span></span><br><span class="line"><span class="comment">//=&gt; 打败 BOSS</span></span><br><span class="line"><span class="comment">//=&gt; 进入第二个城市了</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="DO-WHILE-循环"><a href="#DO-WHILE-循环" class="headerlink" title="DO WHILE 循环"></a>DO WHILE 循环</h3><ul>
+<li><code>do</code>，其实就是做事的意思，其实 <code>do while</code> 和 <code>while</code> 循环基本是一样的，只不过它们的区别就是语法和执行顺序</li>
+<li>语法：<ul>
+<li><code>do</code>：关键字</li>
+<li><code>{}</code>：要做什么事情，也就是我们的循环体（重复去执行的代码）</li>
+<li><code>while</code>：关键字</li>
+<li><code>()</code>：用来进行判断的条件</li>
+</ul>
+</li>
+<li>语法结构<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义初始值</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line"><span class="comment">// 循环</span></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log( num );</span><br><span class="line">  num++;</span><br><span class="line">&#125; <span class="keyword">while</span> ( num &lt; <span class="number">10</span> );</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>可以看到，和 <code>while</code> 循环只有一些小差别<ol>
+<li>因为语法关系，多了一个 <code>do</code> 关键字，并且 <code>while</code> 关键字到了最后面</li>
+<li>要循环的代码块跑到了前面</li>
+<li>执行的顺序发生了一些小变化，因为判断跑到和面去了，所以不管是否满足条件，都会先执行一次 <code>do</code> 后面的代码，然后在进行判断</li>
+</ol>
+</li>
+<li>简单的写一个小例子<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log( num );</span><br><span class="line">  num++;</span><br><span class="line">&#125; <span class="keyword">while</span> ( num &lt; <span class="number">5</span> );</span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'循环结束后：num = '</span> + num );</span><br><span class="line"><span class="comment">// 控制台输出结果</span></span><br><span class="line"><span class="comment">//=&gt; 10</span></span><br><span class="line"><span class="comment">//=&gt; 循环结束后：num = 11</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>可以看到，当初始值为 10 的时候，一定是不满足条件的</li>
+<li>如果是 <code>while</code> 循环，那么一次都不会执行</li>
+<li>可是这里是不管满足不满足条件，都先执行一次 <code>do</code> 后面的代码<ul>
+<li>先输出一下当前的 <code>num</code> 值</li>
+<li>然后让 <code>num</code> 自增</li>
+<li>然后判断满足不满足条件，不满足就继续向后执行</li>
+<li>然后执行循环体外的代码，控制台输出 <code>循环结束后：num = 11</code>，因为经过刚才的一次自增，<code>num</code> 已经变成 11 了</li>
+</ul>
+</li>
+</ul>
+<h3 id="FOR-循环"><a href="#FOR-循环" class="headerlink" title="FOR 循环"></a>FOR 循环</h3><ul>
+<li><code>for</code> 循环在开发过程中，使用频率应该是四种循环中最多的，因为使用 <code>while</code> 循环能够做的事情都可以用 <code>for</code> 循环完成</li>
+<li>只有 <code>do while</code> 循环可以做一些 <code>for</code> 循环不能做的事情，但只是一些特殊情况下会用到</li>
+<li>一般来说用到循环的时候都是使用 <code>for</code> 循环</li>
+<li><code>for</code> 循环和 <code>while</code> 循环的原理都是一样的，只不过是语法不一样而已</li>
+<li>接下来先看一下语法结构<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ( <span class="keyword">var</span> num = <span class="number">0</span>; num &lt; <span class="number">3</span>; num++ ) &#123;</span><br><span class="line"> <span class="built_in">console</span>.log( num );</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'循环结束!'</span> );</span><br><span class="line"></span><br><span class="line"><span class="comment">// 控制台输出</span></span><br><span class="line"><span class="comment">//=&gt; 0</span></span><br><span class="line"><span class="comment">//=&gt; 1</span></span><br><span class="line"><span class="comment">//=&gt; 2</span></span><br><span class="line"><span class="comment">//=&gt; 循环结束!</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>这个看起来比较怪异，但是其实还是按照我们之前的顺序执行的<ul>
+<li><code>for</code>：定义循环关键字</li>
+<li><code>()</code>：把一些定义初始值，判断，和自增写在一起了<ul>
+<li><code>var num = 0</code>：定义初始值</li>
+<li><code>num &lt; 3</code>：判断条件</li>
+<li><code>num++</code>：自己发生改变，自增</li>
+</ul>
+</li>
+<li><code>{}</code>：循环执行的代码块 </li>
+</ul>
+</li>
+<li>在 <code>for</code> 循环中，虽然把 “初始 / 条件 / 自增” 写在了一起，但是千万不要以为他们就是按照顺序一个一个的执行了</li>
+<li>他们依旧是按照我们之前 <code>while</code> 循环的逻辑在执行，只不过人家的语法规范定义成了这样<ul>
+<li>依旧是先定义初始值</li>
+<li>然后条件判断</li>
+<li>然后决定执行还是不执行代码块里面的代码</li>
+<li>最后自增</li>
+</ul>
+</li>
+<li>使用 <code>for</code> 循环的时候，不用我们在代码块中自己来书写自增语句了，因为语法定义的时候已经写过了</li>
+<li>其实 <code>for</code> 循环也可以进行一种变种的写法，只不过用的不多<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (; num &lt; <span class="number">3</span>; ) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log( num );</span><br><span class="line">  num++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>这样书写其实是和之前的写法一摸一样的效果</li>
+<li>但是千万注意，虽然这么写把一些东西从括号内提取出来了，但是括号内的 <code>;</code> 不能少</li>
+<li>一旦少了就会报错了</li>
+</ul>
+<h3 id="FOR-IN-循环"><a href="#FOR-IN-循环" class="headerlink" title="FOR IN 循环"></a>FOR IN 循环</h3><ul>
+<li>本来不想在这篇文章中介绍 <code>for in</code> 循环的，因为这个和前面三种都不一样</li>
+<li>而且 <code>for in</code> 循环一般是用来遍历对象的</li>
+<li>本文阅读者一般为JS基础班同学，可能不太好理解</li>
+<li>但是还是在这里简单说一下，有个印象，后面还会详细介绍这个的</li>
+<li>先来看看语法结构<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 因为是遍历对象的，所以先要有一个对象</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line"> name: <span class="string">'Jack'</span>,</span><br><span class="line"> age: <span class="number">18</span>,</span><br><span class="line"> gender: <span class="string">'男'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 循环遍历</span></span><br><span class="line"><span class="keyword">for</span> ( <span class="keyword">var</span> key <span class="keyword">in</span> obj ) &#123;</span><br><span class="line"> <span class="built_in">console</span>.log( key + <span class="string">' = '</span> + obj[key] );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 控制台输出</span></span><br><span class="line"><span class="comment">//=&gt; name = Jack</span></span><br><span class="line"><span class="comment">//=&gt; age = 18</span></span><br><span class="line"><span class="comment">//=&gt; gender = 男</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>这个 <code>for in</code> 循环一般都是用来遍历对象的<ul>
+<li>重复执行的代码同样是后面代码块中的代码</li>
+<li>他没有自增，因为他执行多少次取决于对象中有多少个成员，有一个成员就执行一次，两个成员就执行两次</li>
+<li>初始化的时候定义的 <code>key</code> 就是对象中的每一个 <code>键名</code>，也就是属性名，以现在这个循环为例<ul>
+<li>当循环第一次的时候，<code>key</code> 的值就是 <code>name</code></li>
+<li>当循环第二次的时候，<code>key</code> 的值就是 <code>age</code></li>
+<li>当循环第三次的时候，<code>key</code> 的值就是 <code>gender</code></li>
+<li>就和我们之前 <code>for</code> 循环的时候的 <code>num</code> 是一样的，循环第一次的时候 <code>num = 0</code>，第二次的时候 <code>num = 1</code>…</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>本文讲了四种循环方式</li>
+<li>每一种都有自己的特点和使用场景，在不同的地方要自行选择<ul>
+<li><code>while</code>：最简单的循环形式，需要自己在循环代码块中书写自增的代码</li>
+<li><code>do while</code>：和 <code>while</code> 循环一样，只不过是不管判断成功与否，先执行一遍代码，在开始判断，同样需要在循环代码中书写自增代码</li>
+<li><code>for</code>：和 <code>while</code> 循环类似，只不过语法形式不一样，不用自己在代码块中写自增代码</li>
+<li><code>for in</code>：和其他三种都不一样，一般用来遍历对象时候使用</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2016/01/07/流程控制之循环结构/">流程控制之循环结构</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">郭翔</a></p>
+        <p><span>Created:</span>2016-01-07, 20:25:57</p>
+        <p><span>Updated:</span>2018-04-22, 22:13:52</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2016/01/07/流程控制之循环结构/" title="流程控制之循环结构">https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/01/07/流程控制之循环结构/</a>
+            <span class="copy-path" data-clipboard-text="From https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/01/07/流程控制之循环结构/　　By 郭翔" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/01/08/解构赋值/">
+                    解构赋值
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/01/07/流程控制之分支结构/">
+                    流程控制之分支结构
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JS中的流程控制-之-循环结构"><span class="toc-number">1.</span> <span class="toc-text">JS中的流程控制 之 循环结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么叫流程控制"><span class="toc-number">1.1.</span> <span class="toc-text">什么叫流程控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环结构"><span class="toc-number">1.2.</span> <span class="toc-text">循环结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WHILE-循环"><span class="toc-number">1.2.1.</span> <span class="toc-text">WHILE 循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DO-WHILE-循环"><span class="toc-number">1.2.2.</span> <span class="toc-text">DO WHILE 循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FOR-循环"><span class="toc-number">1.2.3.</span> <span class="toc-text">FOR 循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FOR-IN-循环"><span class="toc-number">1.2.4.</span> <span class="toc-text">FOR IN 循环</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">1.3.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"流程控制之循环结构　| 郭翔的itcast博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/01/08/解构赋值/" title="Pre: 解构赋值">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/01/07/流程控制之分支结构/" title="Next: 流程控制之分支结构">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/10/git的常用指令/">git的常用指令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/10/github的常用功能介绍/">github的常用功能介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/08/WebStorm安装/">WebStorm安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/布局方式-flex布局/">布局方式 - flex布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/解构赋值/">解构赋值</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制之循环结构/">流程控制之循环结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制之分支结构/">流程控制之分支结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制/">流程控制</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/unicode字符集/">unicode字符集</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/JS中的内置对象-String的常用方法/">JS中的内置对象-String的常用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/使用git在GitHub上托管代码/">使用git在GitHub上托管代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-字符串/">JS中的基本数据类型-字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-数值/">JS中的基本数据类型-数值</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/git安装和配置/">git安装和配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-空/">JS中的基本数据类型-空</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-布尔/">JS中的基本数据类型-布尔</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/封装简单版全兼容ajax/">封装简单版全兼容ajax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/变量的命名规则和规范/">变量的命名规则和规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/Node-js安装/">Node.js安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/JS中的数据类型/">JS中的数据类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/JS中的变量/">JS中的变量</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/JS中的注释/">JS中的注释</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/02/如何在HTML页面引入JavaScript/">如何在HTML页面引入JavaScript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/01/JavaScript脚本语言/">JavaScript脚本语言</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 郭翔
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+             title: "a.article-title, .article-more-link a", 
+            
+             tags: ".article-tag a", 
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

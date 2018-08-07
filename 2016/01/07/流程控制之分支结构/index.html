@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="郭翔" />
+
+
+
+<meta name="description" content="JS里面的流程控制 -- 什么是分支结构">
+<meta name="keywords" content="JavaScript基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="流程控制之分支结构">
+<meta property="og:url" content="https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/01/07/流程控制之分支结构/index.html">
+<meta property="og:site_name" content="郭翔的itcast博客">
+<meta property="og:description" content="JS里面的流程控制 -- 什么是分支结构">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-04-22T14:36:13.664Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="流程控制之分支结构">
+<meta name="twitter:description" content="JS里面的流程控制 -- 什么是分支结构">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="郭翔的itcast博客" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/timg.jpeg">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>流程控制之分支结构 | 郭翔的itcast博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/timg.jpeg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">郭翔</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">风里雨里，传智等你！</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">home</a></li>
+                        
+                            <li><a href="/archives/">all</a></li>
+                        
+                            <li><a href="/tags/">tags</a></li>
+                        
+                            <li><a href="/about/">aboutme</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:m13301295501_1@163.com" title="Email"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6-语法/">ES6 语法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5C3/">H5C3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript基础/">JavaScript基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJS/">NodeJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebStorm/">WebStorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git和github/">git和github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unicode字符集/">unicode字符集</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">传智播客前端与移动开发学院--郭翔</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">郭翔</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/timg.jpeg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">郭翔</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">风里雨里，传智等你！</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">home</a></li>
+                
+                    <li><a href="/archives/">all</a></li>
+                
+                    <li><a href="/tags/">tags</a></li>
+                
+                    <li><a href="/about/">aboutme</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:m13301295501_1@163.com" title="Email"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-流程控制之分支结构" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/07/流程控制之分支结构/" class="article-date">
+      <time datetime="2016-01-07T12:23:00.000Z" itemprop="datePublished">2016-01-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      流程控制之分支结构
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Front-end-Engineer/">Front-end Engineer</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript基础/">JavaScript基础</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="JS中的流程控制-之-分支结构"><a href="#JS中的流程控制-之-分支结构" class="headerlink" title="JS中的流程控制 之 分支结构"></a>JS中的流程控制 之 分支结构</h1><h2 id="什么叫流程控制"><a href="#什么叫流程控制" class="headerlink" title="什么叫流程控制"></a>什么叫流程控制</h2><ul>
+<li>在之前有介绍过流程控制语句，在这里就不多赘述了</li>
+<li>如不清楚，请移步 <a href="/2016/01/07/流程控制/">流程控制</a></li>
+<li>本章主要讲解 分支结构</li>
+</ul>
+<h2 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h2><ul>
+<li>之前我们说过，分支结构其实就是当代码执行到某一个地方的时候，出现了一个条件判断，满足走 “这边”，不满足就走 “那边”</li>
+<li>这个只是简单的介绍，之前我们还介绍过四种分支形式</li>
+<li>接下来我们就一一介绍一下这些形式的分支结构</li>
+</ul>
+<h3 id="分支结构-之-单路分支"><a href="#分支结构-之-单路分支" class="headerlink" title="分支结构 之 单路分支"></a>分支结构 之 单路分支</h3><ul>
+<li>首先要直到我们单路分支结构的语句就是 <code>if</code>，也就是如果的意思</li>
+<li>其实就是 “满足条件” 就执行，”不满足” 就不执行</li>
+<li>语法：<code>if () {}</code><ul>
+<li><code>if</code>：关键字，定义条件分支</li>
+<li><code>()</code>：条件分支的”条件”，写在这里面</li>
+<li><code>{}</code>：满足条件后执行的代码，写在这里面</li>
+</ul>
+</li>
+</ul>
+<p> 这里就直接使用 <code>if语句</code>，我们给定一个场景（去网吧）<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设定一个情景</span></span><br><span class="line"><span class="comment">// 这个 age 变量就是小明的年龄</span></span><br><span class="line"><span class="keyword">var</span> age = <span class="number">17</span>;</span><br><span class="line"><span class="comment">// 小明走在去网吧的路上</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'今天我要去网吧'</span> );</span><br><span class="line"><span class="comment">// 在网吧前台，网管要求看身份证</span></span><br><span class="line"><span class="comment">// 如果够18岁，就可以上网，不够就不能上网</span></span><br><span class="line"><span class="keyword">if</span> ( age &gt; <span class="number">18</span> ) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log( <span class="string">'在网吧上网'</span> );</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 小明走在回家的路上</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'回家了'</span> );</span><br><span class="line"></span><br><span class="line"><span class="comment">// 代码执行结果</span></span><br><span class="line"><span class="comment">//=&gt; 今天我要去网吧</span></span><br><span class="line"><span class="comment">//=&gt; 回家了</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>这个就是最简单的 “单路分支” 结构</li>
+<li>很明显，小明的年龄不够 18 岁，那么他就没有在网吧上网，只是走到网吧，然后网管看了一眼身份证，不够十八岁，然后就回家去了</li>
+<li>同理，如果够 18 岁，那么就会在网吧里面上网，然后才回家<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设定一个情景</span></span><br><span class="line"><span class="comment">// 这个 age 变量就是小明的年龄</span></span><br><span class="line"><span class="keyword">var</span> age = <span class="number">19</span>;</span><br><span class="line"><span class="comment">// 小明走在去网吧的路上</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'今天我要去网吧'</span> );</span><br><span class="line"><span class="comment">// 在网吧前台，网管要求看身份证</span></span><br><span class="line"><span class="comment">// 如果够18岁，就可以上网，不够就不能上网</span></span><br><span class="line"><span class="keyword">if</span> ( age &gt; <span class="number">18</span> ) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log( <span class="string">'在网吧上网'</span> );</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 小明走在回家的路上</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'回家了'</span> );</span><br><span class="line"></span><br><span class="line"><span class="comment">// 代码执行结果</span></span><br><span class="line"><span class="comment">//=&gt; 今天我要去网吧</span></span><br><span class="line"><span class="comment">//=&gt; 在网吧上网</span></span><br><span class="line"><span class="comment">//=&gt; 回家了</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>这就是单路分支</li>
+<li>一个条件，满足就执行 <code>{}</code> 里面的代码，不满足就不执行</li>
+</ul>
+<h3 id="分支结构-之-双路分支"><a href="#分支结构-之-双路分支" class="headerlink" title="分支结构 之 双路分支"></a>分支结构 之 双路分支</h3><ul>
+<li>其实和单路分支差不多，只不过提供了一个条件不满足的时候执行的代码</li>
+<li>我们使用 <code>if else</code> 语句</li>
+<li>语法：<code>if () {} else {}</code><ul>
+<li><code>if</code>：关键字，定义条件分支</li>
+<li><code>()</code>：条件分支的”条件”，写在这里面</li>
+<li><code>{}</code>：满足条件后执行的代码，写在这里面</li>
+<li><code>else</code>：关键字，其他选项</li>
+<li><code>{}</code>：不满足条件时执行的代码</li>
+</ul>
+</li>
+</ul>
+<p> 依旧给定一个场景，还是小明同学去网吧<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设定一个情景</span></span><br><span class="line"><span class="comment">// 这个 age 变量就是小明的年龄</span></span><br><span class="line"><span class="keyword">var</span> age = <span class="number">17</span>;</span><br><span class="line"><span class="comment">// 小明走在去网吧的路上</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'今天我要去网吧'</span> );</span><br><span class="line"><span class="comment">// 在网吧前台，网管要求看身份证</span></span><br><span class="line"><span class="comment">// 如果够18岁，就可以上网</span></span><br><span class="line"><span class="keyword">if</span> ( age &gt; <span class="number">18</span> ) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log( <span class="string">'在网吧上网'</span> );</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// 如果之前 if 位置的条件没有满足</span></span><br><span class="line">  <span class="comment">// 就会执行 else 这里的代码</span></span><br><span class="line">  <span class="built_in">console</span>.log( <span class="string">'换一个黑网吧上网'</span> );</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 小明走在回家的路上</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'回家了'</span> );</span><br><span class="line"></span><br><span class="line"><span class="comment">// 代码执行结果</span></span><br><span class="line"><span class="comment">//=&gt; 今天我要去网吧</span></span><br><span class="line"><span class="comment">//=&gt; 换一个黑网吧上网</span></span><br><span class="line"><span class="comment">//=&gt; 回家了</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>这里 if 条件没有满足，所以执行了 else 里面的代码</li>
+<li>这个就是”双路分支”，其实就是两个行为，满足条件就是行为一，不满足就是行为二</li>
+<li>但是要注意，if 和 else 里面的语句，只会有一个执行</li>
+<li>只要有一个执行了，那么另一个就不会执行<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设定一个情景</span></span><br><span class="line"><span class="comment">// 这个 age 变量就是小明的年龄</span></span><br><span class="line"><span class="keyword">var</span> age = <span class="number">19</span>;</span><br><span class="line"><span class="comment">// 小明走在去网吧的路上</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'今天我要去网吧'</span> );</span><br><span class="line"><span class="comment">// 在网吧前台，网管要求看身份证</span></span><br><span class="line"><span class="comment">// 如果够18岁，就可以上网</span></span><br><span class="line"><span class="keyword">if</span> ( age &gt; <span class="number">18</span> ) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log( <span class="string">'在网吧上网'</span> );</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// 如果之前 if 位置的条件没有满足</span></span><br><span class="line">  <span class="comment">// 就会执行 else 这里的代码</span></span><br><span class="line">  <span class="built_in">console</span>.log( <span class="string">'换一个黑网吧上网'</span> );</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 小明走在回家的路上</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'回家了'</span> );</span><br><span class="line"></span><br><span class="line"><span class="comment">// 代码执行结果</span></span><br><span class="line"><span class="comment">//=&gt; 今天我要去网吧</span></span><br><span class="line"><span class="comment">//=&gt; 在网吧上网</span></span><br><span class="line"><span class="comment">//=&gt; 回家了</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>这就是双路分支，条件满足，就是行 if 后面 <code>{}</code> 里面的代码，条件不满足就执行 else 后面 <code>{}</code> 里面的代码</li>
+<li>两个 <code>{}</code> 里面的代码，只会有一个执行，不可能出现两个都执行的情况</li>
+</ul>
+<h3 id="双路分支扩展-三元运算符"><a href="#双路分支扩展-三元运算符" class="headerlink" title="双路分支扩展 - 三元运算符"></a>双路分支扩展 - 三元运算符</h3><ul>
+<li>双路分支就是一个判断决定两种结果</li>
+<li>判断条件结果为 <code>true</code> 执行代码块一，结果为 <code>false</code> 执行代码块二</li>
+<li>三元运算符就是双路分支的一种简化写法<ul>
+<li>只是简单了双路分支写写法</li>
+<li>但是每个代码块只能由一句代码组成</li>
+<li>有自己固定的语法和规则</li>
+<li>可以单独当作一个表达式来使用</li>
+</ul>
+</li>
+<li>先看语法结构<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">5</span>;</span><br><span class="line">num &lt; <span class="number">10</span> ? <span class="built_in">console</span>.log( <span class="string">'确实小于10'</span> ) : <span class="built_in">console</span>.log( <span class="string">'并不小于10'</span> );</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>这个就是三元运算符（也叫三元表达式）</li>
+<li>他又两个符号分割了三块区域<ul>
+<li>由<code>?</code> 和 <code>:</code> 分割了三个区域</li>
+<li><code>条件 ? 条件为 true 执行这句代码 : 条件为 false 执行这句代码</code></li>
+</ul>
+</li>
+<li>一定要注意 <code>?</code> 前面是条件，条件的结果要么是 <code>true</code> 要么是 <code>false</code></li>
+<li>每一个代码执行的地方一定只能执行一句代码，不能是一段代码</li>
+<li>也可以当作表达式来使用，也就是给一个返回值<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">var</span> result = num &lt; <span class="number">10</span> ? <span class="string">'确实小于10'</span> : <span class="string">'并不小于10'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>这个就是表达式，如果条件为 <code>true</code>，就会返回字符串’确实小于10’，否则就返回字符串’并不小于10’</li>
+</ul>
+<h3 id="分支结构-之-多路分支"><a href="#分支结构-之-多路分支" class="headerlink" title="分支结构 之 多路分支"></a>分支结构 之 多路分支</h3><ul>
+<li>多路分支其实就是可以设定多个条件</li>
+<li>满足第一个条件，就执行第一段代码，不满足就去判断第二个条件，满足就执行第二段代码，不满足就去判断第 n 个条件，满足就执行第 n 段代码</li>
+<li>我们使用 <code>if () {} else if () {} else</code> 语句，这里就用两个条件举例子</li>
+<li>语法：<ul>
+<li><code>if</code>：关键字，定义条件分支</li>
+<li><code>()</code>：条件分支的”条件”，写在这里面</li>
+<li><code>{}</code>：满足条件后执行的代码，写在这里面</li>
+<li><code>else if</code>：关键字，定义第二个条件</li>
+<li><code>{}</code>：满足第二个条件时执行的代码</li>
+<li><code>else</code>：其他选项</li>
+<li><code>{}</code>：两个条件都不满足的时候执行的代码</li>
+</ul>
+</li>
+</ul>
+<p> 还是一样的场景，小明同学去网吧，不过我们加一个条件限定，一号网吧 18 岁，二号网吧 16 岁<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设定一个情景</span></span><br><span class="line"><span class="comment">// 这个 age 变量就是小明的年龄</span></span><br><span class="line"><span class="keyword">var</span> age = <span class="number">15</span>;</span><br><span class="line"><span class="comment">// 小明走在去网吧的路上</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'今天我要去网吧'</span> );</span><br><span class="line"><span class="comment">// 在网吧前台，网管要求看身份证</span></span><br><span class="line"><span class="comment">// 如果够18岁，就可以在一号网吧上网</span></span><br><span class="line"><span class="keyword">if</span> ( age &gt; <span class="number">18</span> ) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log( <span class="string">'在一号网吧上网'</span> );</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> ( age &gt; <span class="number">16</span> ) &#123;</span><br><span class="line">  <span class="comment">// 如果之前 if 位置的条件没有满足</span></span><br><span class="line">  <span class="comment">// 就会盘算 else if 这里的条件是否满足</span></span><br><span class="line">  <span class="comment">// 满足就会执行</span></span><br><span class="line">  <span class="built_in">console</span>.log( <span class="string">'在二号网吧上网'</span> );</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// 如果前两个都不满足</span></span><br><span class="line">  <span class="comment">// 就会执行 else 里面的代码</span></span><br><span class="line">  <span class="built_in">console</span>.log( <span class="string">'在黑网吧上网'</span> );</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 小明走在回家的路上</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'回家了'</span> );</span><br><span class="line"></span><br><span class="line"><span class="comment">// 代码执行结果</span></span><br><span class="line"><span class="comment">//=&gt; 今天我要去网吧</span></span><br><span class="line"><span class="comment">//=&gt; 在黑网吧上网</span></span><br><span class="line"><span class="comment">//=&gt; 回家了</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>这个就是多路分支，其实就是增加了一个条件而已</li>
+<li>这里一共有三个代码块，这三个代码块只会有一个执行，一旦有一个执行了，那么其他的都不会执行</li>
+<li>当然也可以不光光有三个，可以是更多</li>
+<li>这里还要注意一下，就是执行顺序会有影响，执行顺序是从上到下，也就是先判断第一个if条件，满足就不会判断 else if 这个条件了 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设定一个情景</span></span><br><span class="line"><span class="comment">// 这个 age 变量就是小明的年龄</span></span><br><span class="line"><span class="keyword">var</span> age = <span class="number">19</span>;</span><br><span class="line"><span class="comment">// 小明走在去网吧的路上</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'今天我要去网吧'</span> );</span><br><span class="line"><span class="comment">// 在网吧前台，网管要求看身份证</span></span><br><span class="line"><span class="comment">// 如果够18岁，就可以在一号网吧上网</span></span><br><span class="line"><span class="keyword">if</span> ( age &gt; <span class="number">18</span> ) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log( <span class="string">'在一号网吧上网'</span> );</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> ( age &gt; <span class="number">16</span> ) &#123;</span><br><span class="line">  <span class="comment">// 如果之前 if 位置的条件没有满足</span></span><br><span class="line">  <span class="comment">// 就会盘算 else if 这里的条件是否满足</span></span><br><span class="line">  <span class="comment">// 满足就会执行</span></span><br><span class="line">  <span class="built_in">console</span>.log( <span class="string">'在二号网吧上网'</span> );</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// 如果前两个都不满足</span></span><br><span class="line">  <span class="comment">// 就会执行 else 里面的代码</span></span><br><span class="line">  <span class="built_in">console</span>.log( <span class="string">'在黑网吧上网'</span> );</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 小明走在回家的路上</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'回家了'</span> );</span><br><span class="line"></span><br><span class="line"><span class="comment">// 代码执行结果</span></span><br><span class="line"><span class="comment">//=&gt; 今天我要去网吧</span></span><br><span class="line"><span class="comment">//=&gt; 在一号网吧上网</span></span><br><span class="line"><span class="comment">//=&gt; 回家了</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>可以看到，满足了第一个 if 里面的条件，不会去判断 else if 的条件了</li>
+<li>书写的时候一定要注意书写顺序问题，判断的时候一定要想好先判断哪个</li>
+</ul>
+<h3 id="分支结构-之-嵌套分支"><a href="#分支结构-之-嵌套分支" class="headerlink" title="分支结构 之 嵌套分支"></a>分支结构 之 嵌套分支</h3><ul>
+<li>其实到这里，嵌套分支就是一个特别简单的事情了</li>
+<li>其实就是在分支语句的执行代码块中在写一个分支语句，可以是任意类型的分支语句</li>
+<li>没有新的语法，只不过是把一个分支语句，嵌套到另一个分支语句中<br>还是以小明同学去网吧为例子，只不过我们多一个判断，如果进去网吧以后，看看有没有钱，没钱不让上网，有钱在上网<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设定一个情景</span></span><br><span class="line"><span class="comment">// 这个 age 变量就是小明的年龄</span></span><br><span class="line"><span class="keyword">var</span> age = <span class="number">19</span>;</span><br><span class="line"><span class="comment">// 这个 money 变量是小明携带的钱</span></span><br><span class="line"><span class="keyword">var</span> money = <span class="number">10</span>;</span><br><span class="line"><span class="comment">// 小明走在去网吧的路上</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'今天我要去网吧'</span> );</span><br><span class="line"><span class="comment">// 在网吧前台，网管要求看身份证</span></span><br><span class="line"><span class="comment">// 如果够18岁，就可以上网</span></span><br><span class="line"><span class="keyword">if</span> ( age &gt; <span class="number">18</span> ) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log( <span class="string">'在网吧里面，还没交钱'</span> );</span><br><span class="line">  <span class="comment">// 年龄够了以后，还要看看有没有钱</span></span><br><span class="line">  <span class="keyword">if</span> ( money &gt; <span class="number">20</span> ) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="string">'在网吧上网'</span> );</span><br><span class="line">  &#125;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// 如果之前 if 位置的条件没有满足</span></span><br><span class="line">  <span class="comment">// 就会执行 else 这里的代码</span></span><br><span class="line">  <span class="built_in">console</span>.log( <span class="string">'换一个黑网吧'</span> );</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 小明走在回家的路上</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'回家了'</span> );</span><br><span class="line"></span><br><span class="line"><span class="comment">// 代码执行结果</span></span><br><span class="line"><span class="comment">//=&gt; 今天我要去网吧</span></span><br><span class="line"><span class="comment">//=&gt; 在网吧里面</span></span><br><span class="line"><span class="comment">//=&gt; 回家了</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>这个就是嵌套分支，很简单，就是在一个分支结构里面书写另一个分支结构</li>
+</ul>
+<h3 id="分支结构-之-第二种语法"><a href="#分支结构-之-第二种语法" class="headerlink" title="分支结构 之 第二种语法"></a>分支结构 之 第二种语法</h3><ul>
+<li>之前我们写的 <code>if</code> 等等之类的语句，是第一种语法</li>
+<li>我们的分支结构还有一种语法，叫做 <code>switch</code> 语法</li>
+<li>基本逻辑是一样的，只不过是语法不一样而已</li>
+<li>接下来我们就说一下 <code>switch</code> 语法</li>
+<li>先来看看长成什么样子<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个用于判断的变量</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">10</span>;</span><br><span class="line"><span class="comment">// switch 关键字，后面括号内是用于判断的表达式</span></span><br><span class="line"><span class="keyword">switch</span> (num) &#123;</span><br><span class="line">  <span class="comment">// 当被判断变量 等于 2 的时候</span></span><br><span class="line">  <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    <span class="comment">// 当 表达式的值等于 2 的时候执行的代码</span></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="comment">// 上面几种都不满足</span></span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    <span class="comment">// 上面的都不满足，就执行这里的代码</span></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>这个就是 <code>switch</code> 判断，适用于准确判断<ul>
+<li><code>()</code> 内放一个表达式，这个表达式可以有多种情况出现</li>
+<li><code>{}</code> 内放的是我们所有要处理的情况的代码</li>
+<li><code>case</code> 情景，也就是说我们之前括号内有可能出现的情况</li>
+<li><code>break</code> 每一个情景必须对应一个 <code>break</code> 不然会就会在执行当前代码以后再去执行下一个 <code>case</code> 中的代码</li>
+<li><code>default</code> 当所有的 <code>case</code> 都不满足的时候，就会执行这里的，也可以不写</li>
+</ul>
+</li>
+<li>接下来看一代代码<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个用于判断的变量</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">10</span>;</span><br><span class="line"><span class="comment">// switch 关键字，后面括号内是用于判断的表达式</span></span><br><span class="line"><span class="keyword">switch</span> (num) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="string">'我是 case = 2'</span> );</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="string">'我是 case = 4'</span> );</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="string">'我是 case = 6'</span> );</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="string">'我是 case = 8'</span> );</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="string">'我是 case = 10'</span> );</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="comment">// 上面几种都不满足</span></span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    <span class="comment">// 上面的都不满足，就执行这里的代码</span></span><br><span class="line">    <span class="built_in">console</span>.log( <span class="string">'所有的case都不满足'</span> );</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>当 <code>num = 2</code> 的时候，控制台就会输出 <code>//=&gt; 我是 case = 2</code><br>当 <code>num = 4</code> 的时候，控制台就会输出 <code>//=&gt; 我是 case = 4</code><br>当 <code>num = 6</code> 的时候，控制台就会输出 <code>//=&gt; 我是 case = 6</code><br>当 <code>num = 8</code> 的时候，控制台就会输出 <code>//=&gt; 我是 case = 8</code><br>当 <code>num = 10</code> 的时候，控制台就会输出 <code>//=&gt; 我是 case = 10</code><br>当 <code>num = 其他任意数字</code> 的时候，控制台就会输出 <code>//=&gt; 所有的case都不满足</code></p>
+</blockquote>
+<ul>
+<li>这里 <code>switch</code> 分支语句中，<code>case</code> 只能准确判断某一个值，不能出现 <code>&gt; / &lt; / &gt;= / &lt;=</code> 之类的判断情况</li>
+<li>每一个 <code>case</code> 后面必须要有 <code>break</code>，不然就会把下面一个 <code>case</code> 中的代码也执行掉</li>
+<li>但是有的时候不写 <code>break</code> 也会有一些用处，但是要慎用</li>
+<li>有两种情况，那么 <code>if else</code> 比较好用，如果是多个值的判断的话，那么 <code>switch</code> 是一个不错的选择</li>
+<li>但是 <code>switch</code> 在真正的开发中，使用的频率相对较少，但是我们也要掌握</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>本章讲了 分支结构 的两种语法</li>
+<li><code>if else</code> 语句，只会执行一个代码块，要么是 <code>if</code> 里面的，要么是 <code>else</code> 里面的<ul>
+<li>单路分支的时候，如果 <code>{}</code> 里面只有一句代码，那么可以省略 <code>{}</code> 不写，直接写在 <code>()</code> 的后面就可以</li>
+<li>双路分支的时候扩展了一个三元表达式，一定注意，只能执行一句代码</li>
+<li>多路分支的时候，要注意书写的顺序，因为有的时候顺序是会影响执行结果的</li>
+</ul>
+</li>
+<li><code>switch</code> 里面的 <code>case</code> 可以有任意个，但是一定要写 <code>break</code>，当如，如果业务需要也可以不写（慎用）<ul>
+<li>最后的 <code>default</code> 可以不写，如果没有排他情况，就可以不写</li>
+<li>最后一个 <code>case</code> 或者 <code>default</code> 结尾的 <code>break</code> 可以不写，但是为了保持格式和书写习惯，建议也写上</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2016/01/07/流程控制之分支结构/">流程控制之分支结构</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">郭翔</a></p>
+        <p><span>Created:</span>2016-01-07, 20:23:00</p>
+        <p><span>Updated:</span>2018-04-22, 22:36:13</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2016/01/07/流程控制之分支结构/" title="流程控制之分支结构">https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/01/07/流程控制之分支结构/</a>
+            <span class="copy-path" data-clipboard-text="From https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/01/07/流程控制之分支结构/　　By 郭翔" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/01/07/流程控制之循环结构/">
+                    流程控制之循环结构
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/01/07/流程控制/">
+                    流程控制
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JS中的流程控制-之-分支结构"><span class="toc-number">1.</span> <span class="toc-text">JS中的流程控制 之 分支结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么叫流程控制"><span class="toc-number">1.1.</span> <span class="toc-text">什么叫流程控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分支结构"><span class="toc-number">1.2.</span> <span class="toc-text">分支结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分支结构-之-单路分支"><span class="toc-number">1.2.1.</span> <span class="toc-text">分支结构 之 单路分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支结构-之-双路分支"><span class="toc-number">1.2.2.</span> <span class="toc-text">分支结构 之 双路分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双路分支扩展-三元运算符"><span class="toc-number">1.2.3.</span> <span class="toc-text">双路分支扩展 - 三元运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支结构-之-多路分支"><span class="toc-number">1.2.4.</span> <span class="toc-text">分支结构 之 多路分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支结构-之-嵌套分支"><span class="toc-number">1.2.5.</span> <span class="toc-text">分支结构 之 嵌套分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支结构-之-第二种语法"><span class="toc-number">1.2.6.</span> <span class="toc-text">分支结构 之 第二种语法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">1.3.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"流程控制之分支结构　| 郭翔的itcast博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/01/07/流程控制之循环结构/" title="Pre: 流程控制之循环结构">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/01/07/流程控制/" title="Next: 流程控制">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/10/git的常用指令/">git的常用指令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/10/github的常用功能介绍/">github的常用功能介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/08/WebStorm安装/">WebStorm安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/布局方式-flex布局/">布局方式 - flex布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/解构赋值/">解构赋值</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制之循环结构/">流程控制之循环结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制之分支结构/">流程控制之分支结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制/">流程控制</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/unicode字符集/">unicode字符集</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/JS中的内置对象-String的常用方法/">JS中的内置对象-String的常用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/使用git在GitHub上托管代码/">使用git在GitHub上托管代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-字符串/">JS中的基本数据类型-字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-数值/">JS中的基本数据类型-数值</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/git安装和配置/">git安装和配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-空/">JS中的基本数据类型-空</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-布尔/">JS中的基本数据类型-布尔</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/封装简单版全兼容ajax/">封装简单版全兼容ajax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/变量的命名规则和规范/">变量的命名规则和规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/Node-js安装/">Node.js安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/JS中的数据类型/">JS中的数据类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/JS中的变量/">JS中的变量</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/JS中的注释/">JS中的注释</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/02/如何在HTML页面引入JavaScript/">如何在HTML页面引入JavaScript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/01/JavaScript脚本语言/">JavaScript脚本语言</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 郭翔
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+             title: "a.article-title, .article-more-link a", 
+            
+             tags: ".article-tag a", 
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

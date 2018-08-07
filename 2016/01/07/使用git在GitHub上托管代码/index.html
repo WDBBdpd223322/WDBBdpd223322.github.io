@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="郭翔" />
+
+
+
+<meta name="description" content="在github上托管自己的代码">
+<meta name="keywords" content="git和github">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用git在GitHub上托管代码">
+<meta property="og:url" content="https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/01/07/使用git在GitHub上托管代码/index.html">
+<meta property="og:site_name" content="郭翔的itcast博客">
+<meta property="og:description" content="在github上托管自己的代码">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/img/git/git仓库001.png">
+<meta property="og:image" content="https://github.com/img/git/git仓库002.png">
+<meta property="og:image" content="https://github.com/img/git/git仓库003.png">
+<meta property="og:image" content="https://github.com/img/git/git密钥001.png">
+<meta property="og:image" content="https://github.com/img/git/git密钥002.png">
+<meta property="og:updated_time" content="2018-04-25T08:42:15.051Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用git在GitHub上托管代码">
+<meta name="twitter:description" content="在github上托管自己的代码">
+<meta name="twitter:image" content="https://github.com/img/git/git仓库001.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="郭翔的itcast博客" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/timg.jpeg">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>使用git在GitHub上托管代码 | 郭翔的itcast博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/timg.jpeg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">郭翔</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">风里雨里，传智等你！</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">home</a></li>
+                        
+                            <li><a href="/archives/">all</a></li>
+                        
+                            <li><a href="/tags/">tags</a></li>
+                        
+                            <li><a href="/about/">aboutme</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:m13301295501_1@163.com" title="Email"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6-语法/">ES6 语法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5C3/">H5C3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript基础/">JavaScript基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJS/">NodeJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebStorm/">WebStorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git和github/">git和github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unicode字符集/">unicode字符集</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">传智播客前端与移动开发学院--郭翔</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">郭翔</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/timg.jpeg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">郭翔</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">风里雨里，传智等你！</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">home</a></li>
+                
+                    <li><a href="/archives/">all</a></li>
+                
+                    <li><a href="/tags/">tags</a></li>
+                
+                    <li><a href="/about/">aboutme</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:m13301295501_1@163.com" title="Email"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-使用git在GitHub上托管代码" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/07/使用git在GitHub上托管代码/" class="article-date">
+      <time datetime="2016-01-06T16:10:37.000Z" itemprop="datePublished">2016-01-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用git在GitHub上托管代码
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Development-Environment/">Development Environment</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git和github/">git和github</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="在github上托管自己的代码"><a href="#在github上托管自己的代码" class="headerlink" title="在github上托管自己的代码"></a>在github上托管自己的代码</h1><ul>
+<li>我们可以把我们自己写的代码提交到 github 上面来进行托管，这样就再也不会丢失了，也不会因为版本问题而苦恼了</li>
+<li>在github托管代码的前提是，要有 <code>git版本控制器</code></li>
+<li>这里默认已经安装好 <code>git</code> 了，如果没有，请移步<a href="/2016/01/06/git安装和配置/">git安装和配置</a></li>
+</ul>
+<h2 id="第一次使用git推送代码到github托管"><a href="#第一次使用git推送代码到github托管" class="headerlink" title="第一次使用git推送代码到github托管"></a>第一次使用git推送代码到github托管</h2><h3 id="创建本地仓库"><a href="#创建本地仓库" class="headerlink" title="创建本地仓库"></a>创建本地仓库</h3><ul>
+<li>说是本地仓库，其实就是一个本地的文件夹，当这个文件夹被 git 管理起来以后，我们就把这个文件夹叫做一个”本地仓库”</li>
+</ul>
+<ol>
+<li><p>先在电脑中，找到一个自己喜欢的位置，建立一个文件夹，我这里就在桌面新建一个文件夹，叫做”git提交测试”，进入到文件夹里面，鼠标右键单机，选择 <code>git bash</code> 打开git命令行窗口，执行初始化命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git init</span><br></pre></td></tr></table></figure>
+<ul>
+<li>这条命令是初始化的意思，也就是把当前文件夹初始化成一个本地仓库，也就是让这个文件夹被 <code>git版本控制器</code> 管理起来</li>
+<li>这条命令执行完毕以后，会在文件夹中生成一个 <code>.git</code> 的文件夹，因为这个文件夹在某些系统下默认是隐藏文件夹，所以如果看不到，就调整一下”显示隐藏文件夹”就好了</li>
+</ul>
+</li>
+</ol>
+<h3 id="添加内容"><a href="#添加内容" class="headerlink" title="添加内容"></a>添加内容</h3><ul>
+<li>要在文件夹内写入一些内容，因为一个空的仓库是不能被提交的，写入内容的时候要注意，如果是一个”空文件夹”也是不能被提交的，所以说，在仓库内不要出现空文件夹</li>
+<li>但是，如果我们的需求是却是要在远程仓库保留一个空文件夹占位，以后可能会有东西写入进去的话，我们默认在这个空文件夹内放入一个 <code>.gitkeep</code> 文件，有了 <code>.gitkeep</code> 文件占位，这就不是空文件夹了，就可以提交上去了，以后有东西了，就把这个 <code>.gitkeep</code> 文件删除就好，当然，如果你一定喜欢放一个 <code>a.txt</code> 文件占位也不是不可以<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- git提交测试</span><br><span class="line">  + 测试.txt</span><br><span class="line">  + 空文件夹测试（我是一个空文件夹，在git提交的时候，我是不会被提交上去的）</span><br><span class="line">  - 文件夹提交（我们默认是在问价加内放一个 .gitkeep文件占位）</span><br><span class="line">    + .gitkeep</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="查看状态"><a href="#查看状态" class="headerlink" title="查看状态"></a>查看状态</h3><ul>
+<li>添加好内容以后，我们可以看一下当前文件夹内文件的一个状态，看看都有哪些东西会被提交上去</li>
+<li>只要在刚才的 <code>git bash</code> 窗口中输入如下指令就好，会把可以提交的内容展示出来<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git status</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="添加到暂存区"><a href="#添加到暂存区" class="headerlink" title="添加到暂存区"></a>添加到暂存区</h3><ul>
+<li>把我们准备好的内容添加到暂存区</li>
+<li>暂存区是干什么用的<ul>
+<li>顾名思义就是暂时存储内容的一个区域，是在本地和远程仓库中间的一个中转站</li>
+<li>也就是说，我们把本地仓库内的东西提交到远程的时候，不是直接提交上去的，而是放在一个”暂存区”内，然后在把”暂存区”的内容提交到远程仓库</li>
+<li>其实，在真正的开发中，我们也是每写完一点东西，都先放在”暂存区”，然后，到晚上的时候，一次性把暂存区里面的所有东西一次性提交到远程仓库</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li><p>把所有内容放入”暂存区”，直接输入如下命令就好：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git add *</span><br><span class="line"><span class="meta">$</span> git add --all</span><br><span class="line"><span class="meta">$</span> git add -A</span><br><span class="line"><span class="meta">$</span> git add .</span><br></pre></td></tr></table></figure>
+<ul>
+<li>这四个指令使用哪一个都是可以的</li>
+</ul>
+</li>
+<li><p>也可以只放我们指定的文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git add 测试.txt</span><br><span class="line"><span class="meta">$</span> git add 文件夹提交/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>上面两个就是指定文件放入”暂存区”</li>
+<li>第一个是放入一个文件</li>
+<li>第二个是放入一个文件夹，要在末尾加上 <code>/</code></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>这样，文件就会添加到暂存区了</li>
+<li>我在这里使用的是 <code>git add --all</code> 指令，全部添加</li>
+</ul>
+<h3 id="做本次提交说明"><a href="#做本次提交说明" class="headerlink" title="做本次提交说明"></a>做本次提交说明</h3><ul>
+<li>我们每一次放入暂存区内的东西都是为了要提交到远程仓库，所以我们每一次 <code>add</code> 的时候都会做一次当前这次提交的说明，也就是说我们本次的提交都做了什么修改</li>
+<li>比如当前这一次是我们的第一次提交，可以说是 “初始化仓库” 或者 “first” 或者 “提交测试” 之类的说明，瞎写也无所谓，只不过瞎写的话，那我们以后也就不记得哪次提交都做了什么了<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git commit -m "提交测试"</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>上面这条指令就是本次提交的说明</li>
+</ul>
+<h3 id="添加远程地址"><a href="#添加远程地址" class="headerlink" title="添加远程地址"></a>添加远程地址</h3><ul>
+<li>接下来就是准备提交到远程仓库了</li>
+<li>这个时候，就需要一个远程仓库的地址，因为你要告诉你的 git，代码提交到哪里去</li>
+<li>那么现在我们就需要去到 github 里面创建一个仓库了</li>
+</ul>
+<ol>
+<li>打开<a href="https://github.com/">github</a>，登录自己的github账号，我这里就登录我的GitHub账号了，进去以后，点击 <code>new repository</code>，创建一个远程仓库<br><img src="/img/git/git仓库001.png" alt="git仓库001"></li>
+<li>填写仓库名称，我这里使用 “test” 作为仓库名称（不要使用中文），一般我们选择公开的就好，仓库说明写不写都可以，然后别的都不用管，点击 <code>created repository</code> 创建仓库就好<br><img src="/img/git/git仓库002.png" alt="git仓库001"></li>
+<li>会出现如下界面，这就表示仓库已经创建好了，空仓库就是显示成下面这个样子<br><img src="/img/git/git仓库003.png" alt="git仓库001"><ul>
+<li>其实本次仓库的操作，人家已经给我们列出来了</li>
+<li>这个时候远程仓库有了，我们只要把远程仓库的地址告诉本地仓库那个 <code>git版本控制器</code> 就好了</li>
+<li>这个是在告诉 git 我添加了一个远程仓库地址，你就把东西给提交到这里面去</li>
+<li>并且给这个地址起了一个别名，叫做 <code>origin</code>，这样以后再使用地址的时候，直接使用 <code>origin</code> 就可以了，当然，你想叫个别的名字也是可以的<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git remote add origin 你的仓库地址</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="推送到远程仓库"><a href="#推送到远程仓库" class="headerlink" title="推送到远程仓库"></a>推送到远程仓库</h3><ul>
+<li>回到我们本地的 <code>git bash</code> 窗口内，输入一个”推送到远程”的指令，就会把暂存区里面的东西推送到远程仓库里面了<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git push -u origin master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>这里是把暂存区里面的所有东西都会提交到远程仓库了</li>
+<li>第一次提交的时候，中途会让你填写一次用户名和密码，就是你的github用户名和密码</li>
+<li>有的操作系统默认设置成每次都输入用户名米阿莫，有的系统是输入一次以后就都不用输入了</li>
+<li>本文最后会分享设置密钥，设置了密钥以后就不用输入密码了，每次都会直接提交（如果频繁切换github账户，建议不要设置密钥）</li>
+<li>暂存区里面就没有东西了，这个时候刷新页面，就会看到我们之前本地写的那些东西出现在了远程</li>
+</ul>
+<h2 id="另一种方式的代码提交方法"><a href="#另一种方式的代码提交方法" class="headerlink" title="另一种方式的代码提交方法"></a>另一种方式的代码提交方法</h2><h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><ul>
+<li>把刚才的那个提交代码的方式忘掉，我们换一种简单的方式提交一次代码</li>
+<li>先创建一个远程仓库，在<a href="https://github.com/">github</a>上面点击 <code>new repository</code> 创建新的仓库，方法和刚才一样，我这里还叫做 “test” 仓库</li>
+<li>和刚才一样，也把远程仓库的地址复制下来</li>
+</ul>
+<h3 id="本地克隆"><a href="#本地克隆" class="headerlink" title="本地克隆"></a>本地克隆</h3><ul>
+<li>在本地把这个远程仓库克隆下来</li>
+<li>也就是说，把一个空仓库给拉到本地来，这样就会默认变成一个被 <code>git版本控制器</code> 管理的文件加了</li>
+<li>我就直接在桌面上克隆了，在桌面点击鼠标右键，打开 <code>git bash</code> 命令行窗口</li>
+<li>直接输入指令克隆，本地桌面上就会多一个叫做 “test” 的文件夹，这个文件夹就是被 <code>git</code> 管理起来的本地仓库，并且已经可远程 “test” 仓库建立了连接</li>
+<li>我们在里面写入内容以后，直接提交就可以了，不用在输入一次地址了<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git clone 你的github仓库地址</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="添加内容-1"><a href="#添加内容-1" class="headerlink" title="添加内容"></a>添加内容</h3><ul>
+<li>和刚才一样，向文件夹内添加一些内容<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- git提交测试</span><br><span class="line">  + 测试.txt</span><br><span class="line">  - 文件夹提交</span><br><span class="line">    + .gitkeep</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="添加到缓存区"><a href="#添加到缓存区" class="headerlink" title="添加到缓存区"></a>添加到缓存区</h3><ul>
+<li>和之前一样的，添加到暂存区<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git add --all</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="做本次提交说明-1"><a href="#做本次提交说明-1" class="headerlink" title="做本次提交说明"></a>做本次提交说明</h3><ul>
+<li>依旧是做一次提交说明<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git commit -m "提交测试"</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="推送到远程仓库-1"><a href="#推送到远程仓库-1" class="headerlink" title="推送到远程仓库"></a>推送到远程仓库</h3><ul>
+<li>这里就不需要再次填写地址了，直接提交就可以了<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git push -u origin master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="第二次以后的推送代码"><a href="#第二次以后的推送代码" class="headerlink" title="第二次以后的推送代码"></a>第二次以后的推送代码</h2><h3 id="添加内容-2"><a href="#添加内容-2" class="headerlink" title="添加内容"></a>添加内容</h3><ul>
+<li>这里说的第二次，就是在已经提交过一次代码的文件夹内，再次进行编辑，然后再次提交</li>
+<li>用上述的两种方法哪一种作为第一次提交都可以</li>
+<li>添加一些新的内容<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- git提交测试</span><br><span class="line">  + 测试.txt</span><br><span class="line">  - 文件夹提交</span><br><span class="line">    + .gitkeep</span><br><span class="line">  - 第二次写入内容.txt</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="查看状态-1"><a href="#查看状态-1" class="headerlink" title="查看状态"></a>查看状态</h3><ul>
+<li>依旧是查看一下状态，这里其实不是必须每次都查询状态，因为我们自己写的东西，我们自己心里还是很清楚的</li>
+<li>这里只是为了更严谨而已，养成一个严谨的习惯是很好的一件事情<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git status</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="添加到缓存区-1"><a href="#添加到缓存区-1" class="headerlink" title="添加到缓存区"></a>添加到缓存区</h3><ul>
+<li>添加到暂存区<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git add --all</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="做本次提交说明-2"><a href="#做本次提交说明-2" class="headerlink" title="做本次提交说明"></a>做本次提交说明</h3><ul>
+<li>做本次的提交说明<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git commit -m "第二次提交，添加了 第二次写入内容.txt 文件"</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="推送到远程仓库-2"><a href="#推送到远程仓库-2" class="headerlink" title="推送到远程仓库"></a>推送到远程仓库</h3><ul>
+<li>从第二次推送远程开始就不用写那么多东西了，直接 <code>push</code> 就好了<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git push</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="密钥的使用"><a href="#密钥的使用" class="headerlink" title="密钥的使用"></a>密钥的使用</h2><ul>
+<li>在这里使用密钥以后，我们就都不用输入密码了</li>
+<li>并且有了密钥以后，我们再创建远程仓库以后，复制地址的时候，不要在使用 <code>HTTPS</code> 了，要使用 <code>SSH</code>，不然密钥就白配置了，不会生效</li>
+</ul>
+<ol>
+<li>首先，打开cmd命令窗口（mac打开终端），查看你的 <code>git config配置</code>，主要是看看你的 <code>user.email</code><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git config --list</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="2">
+<li><p>生成密钥，注意生成密钥时候填写的都想别写错了，</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ssh-keygen -t rsa -C ‘上面配置项中的邮箱’</span><br></pre></td></tr></table></figure>
+<ul>
+<li>输入指令后会出现下面状态，表示本地密钥已经生成<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/c/Users/你的电脑名称/.ssh/id_rsa):</span><br><span class="line">Enter passphrase (empty for no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved in /c/Users/你的电脑名称/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved in /c/Users/你的电脑名称/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:zA6wNJrFB6NcqS6eBog/AHlzQuvFjYpG759Yhh1lWGI xxxxxx@xxxxx.xxx(上面自己的邮箱)</span><br><span class="line">The key's randomart image is:</span><br><span class="line">+---[RSA 2048]----+</span><br><span class="line">|    +E .         |</span><br><span class="line">| ..+oo+          |</span><br><span class="line">| oo+*+.o         |</span><br><span class="line">|o.*===+o         |</span><br><span class="line">|==+*... S        |</span><br><span class="line">|B.+.o .o         |</span><br><span class="line">|++o. +  .        |</span><br><span class="line">| +o.+ .          |</span><br><span class="line">|.  o.o           |</span><br><span class="line">+----[SHA256]-----+</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>找到密钥文件</p>
+<ul>
+<li>就在上面痴线的那一对东西中，有文件对应的路径 <code>Your identification has been saved in /c/Users/你的电脑名称/.ssh/id_rsa.</code></li>
+<li>按照路径找到这个 <code>id_rsa</code> 文件，打开文件，把里面的内容一个字母都不要放过的复制下来，打开后直接 <code>ctrl + a</code>，然后 <code>ctrl + c</code> 就好</li>
+</ul>
+</li>
+<li>打开<a href="https://github.com/">github</a>，点击设置 <code>settings</code><br><img src="/img/git/git密钥001.png" alt="git密钥001"></li>
+<li>点击 <code>SSH and GPG keys</code><br><img src="/img/git/git密钥002.png" alt="git密钥002"></li>
+<li>点击右上角 <code>New SSH key</code>，把你刚才复制的密钥粘贴在 <code>key</code> 文本域内，<code>title</code> 位置写不写内容都成，或者你随便弄个名字就好，然后点击 <code>add SSH key</code>，就创建好了</li>
+</ol>
+<ul>
+<li>到此，密钥配置完毕，以后再使用仓库地址的时候，记得选择 <code>SSH</code> 在复制地址，就再也不用输入密码了</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2016/01/07/使用git在GitHub上托管代码/">使用git在GitHub上托管代码</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">郭翔</a></p>
+        <p><span>Created:</span>2016-01-07, 00:10:37</p>
+        <p><span>Updated:</span>2018-04-25, 16:42:15</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2016/01/07/使用git在GitHub上托管代码/" title="使用git在GitHub上托管代码">https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/01/07/使用git在GitHub上托管代码/</a>
+            <span class="copy-path" data-clipboard-text="From https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/01/07/使用git在GitHub上托管代码/　　By 郭翔" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/01/07/JS中的内置对象-String的常用方法/">
+                    JS中的内置对象-String的常用方法
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/01/06/JS中的基本数据类型-字符串/">
+                    JS中的基本数据类型-字符串
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#在github上托管自己的代码"><span class="toc-number">1.</span> <span class="toc-text">在github上托管自己的代码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一次使用git推送代码到github托管"><span class="toc-number">1.1.</span> <span class="toc-text">第一次使用git推送代码到github托管</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建本地仓库"><span class="toc-number">1.1.1.</span> <span class="toc-text">创建本地仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加内容"><span class="toc-number">1.1.2.</span> <span class="toc-text">添加内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看状态"><span class="toc-number">1.1.3.</span> <span class="toc-text">查看状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加到暂存区"><span class="toc-number">1.1.4.</span> <span class="toc-text">添加到暂存区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#做本次提交说明"><span class="toc-number">1.1.5.</span> <span class="toc-text">做本次提交说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加远程地址"><span class="toc-number">1.1.6.</span> <span class="toc-text">添加远程地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#推送到远程仓库"><span class="toc-number">1.1.7.</span> <span class="toc-text">推送到远程仓库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#另一种方式的代码提交方法"><span class="toc-number">1.2.</span> <span class="toc-text">另一种方式的代码提交方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建仓库"><span class="toc-number">1.2.1.</span> <span class="toc-text">创建仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本地克隆"><span class="toc-number">1.2.2.</span> <span class="toc-text">本地克隆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加内容-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">添加内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加到缓存区"><span class="toc-number">1.2.4.</span> <span class="toc-text">添加到缓存区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#做本次提交说明-1"><span class="toc-number">1.2.5.</span> <span class="toc-text">做本次提交说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#推送到远程仓库-1"><span class="toc-number">1.2.6.</span> <span class="toc-text">推送到远程仓库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二次以后的推送代码"><span class="toc-number">1.3.</span> <span class="toc-text">第二次以后的推送代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#添加内容-2"><span class="toc-number">1.3.1.</span> <span class="toc-text">添加内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看状态-1"><span class="toc-number">1.3.2.</span> <span class="toc-text">查看状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加到缓存区-1"><span class="toc-number">1.3.3.</span> <span class="toc-text">添加到缓存区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#做本次提交说明-2"><span class="toc-number">1.3.4.</span> <span class="toc-text">做本次提交说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#推送到远程仓库-2"><span class="toc-number">1.3.5.</span> <span class="toc-text">推送到远程仓库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#密钥的使用"><span class="toc-number">1.4.</span> <span class="toc-text">密钥的使用</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"使用git在GitHub上托管代码　| 郭翔的itcast博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/01/07/JS中的内置对象-String的常用方法/" title="Pre: JS中的内置对象-String的常用方法">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/01/06/JS中的基本数据类型-字符串/" title="Next: JS中的基本数据类型-字符串">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/10/git的常用指令/">git的常用指令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/10/github的常用功能介绍/">github的常用功能介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/08/WebStorm安装/">WebStorm安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/布局方式-flex布局/">布局方式 - flex布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/解构赋值/">解构赋值</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制之循环结构/">流程控制之循环结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制之分支结构/">流程控制之分支结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制/">流程控制</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/unicode字符集/">unicode字符集</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/JS中的内置对象-String的常用方法/">JS中的内置对象-String的常用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/使用git在GitHub上托管代码/">使用git在GitHub上托管代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-字符串/">JS中的基本数据类型-字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-数值/">JS中的基本数据类型-数值</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/git安装和配置/">git安装和配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-空/">JS中的基本数据类型-空</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-布尔/">JS中的基本数据类型-布尔</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/封装简单版全兼容ajax/">封装简单版全兼容ajax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/变量的命名规则和规范/">变量的命名规则和规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/Node-js安装/">Node.js安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/JS中的数据类型/">JS中的数据类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/JS中的变量/">JS中的变量</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/JS中的注释/">JS中的注释</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/02/如何在HTML页面引入JavaScript/">如何在HTML页面引入JavaScript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/01/JavaScript脚本语言/">JavaScript脚本语言</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 郭翔
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+             title: "a.article-title, .article-more-link a", 
+            
+             tags: ".article-tag a", 
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

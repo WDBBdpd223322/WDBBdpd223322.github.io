@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="郭翔" />
+
+
+
+<meta name="description" content="JS中的基本数据类型 - 字符串">
+<meta name="keywords" content="JavaScript基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS中的基本数据类型-字符串">
+<meta property="og:url" content="https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/01/06/JS中的基本数据类型-字符串/index.html">
+<meta property="og:site_name" content="郭翔的itcast博客">
+<meta property="og:description" content="JS中的基本数据类型 - 字符串">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/img/字符串/字符串001.png">
+<meta property="og:updated_time" content="2018-04-25T08:55:59.310Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS中的基本数据类型-字符串">
+<meta name="twitter:description" content="JS中的基本数据类型 - 字符串">
+<meta name="twitter:image" content="https://github.com/img/字符串/字符串001.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="郭翔的itcast博客" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/timg.jpeg">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>JS中的基本数据类型-字符串 | 郭翔的itcast博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/timg.jpeg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">郭翔</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">风里雨里，传智等你！</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">home</a></li>
+                        
+                            <li><a href="/archives/">all</a></li>
+                        
+                            <li><a href="/tags/">tags</a></li>
+                        
+                            <li><a href="/about/">aboutme</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:m13301295501_1@163.com" title="Email"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6-语法/">ES6 语法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5C3/">H5C3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript基础/">JavaScript基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJS/">NodeJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebStorm/">WebStorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git和github/">git和github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unicode字符集/">unicode字符集</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">传智播客前端与移动开发学院--郭翔</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">郭翔</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/timg.jpeg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">郭翔</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">风里雨里，传智等你！</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">home</a></li>
+                
+                    <li><a href="/archives/">all</a></li>
+                
+                    <li><a href="/tags/">tags</a></li>
+                
+                    <li><a href="/about/">aboutme</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:m13301295501_1@163.com" title="Email"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-JS中的基本数据类型-字符串" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/06/JS中的基本数据类型-字符串/" class="article-date">
+      <time datetime="2016-01-06T14:55:44.000Z" itemprop="datePublished">2016-01-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JS中的基本数据类型-字符串
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Front-end-Engineer/">Front-end Engineer</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript基础/">JavaScript基础</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="JS中的基本数据类型"><a href="#JS中的基本数据类型" class="headerlink" title="JS中的基本数据类型"></a>JS中的基本数据类型</h1><ul>
+<li>本张旨在介绍JS中的基本数据类型其中的一种 – 字符串类型</li>
+<li>默认已知JS中的所有数据类型</li>
+<li>JS中所有数据类型的分类简介请移步<a href="/2016/01/04/JS中的数据类型">JS中的数据类型</a></li>
+</ul>
+<h2 id="String（字符串）"><a href="#String（字符串）" class="headerlink" title="String（字符串）"></a>String（字符串）</h2><ul>
+<li>字符串，顾名思义就是把若干个字符串起来就是，就叫做字符串<ul>
+<li>字符，就是所有我们键盘上能打出来的每一个都是一个字符</li>
+<li>串，在JS里面依靠单引号 <code>&#39;</code> 和 <code>&quot;</code> 把字符穿起来</li>
+<li>所以，被 <code>&#39;</code> 和 <code>&quot;</code> 包裹的所有内容，我们都叫做 字符串</li>
+<li>但是在js开发过程中，我们推荐使用 <code>&#39;</code> 单引号，因为这个是广大开发者默认的使用方式</li>
+</ul>
+</li>
+</ul>
+<h3 id="字符串的字面量形式"><a href="#字符串的字面量形式" class="headerlink" title="字符串的字面量形式"></a>字符串的字面量形式</h3>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 下面这些都是字符串，所有被 单引号 和 双引号 包裹的我们都叫做字符串</span></span><br><span class="line"><span class="keyword">var</span> str1 = <span class="string">'abc'</span>;</span><br><span class="line"><span class="keyword">var</span> str2 = <span class="string">"abc"</span>;</span><br><span class="line"><span class="keyword">var</span> str3 = <span class="string">'dkjsahd1h24i23^%$%$^$%&amp;^'</span>;</span><br><span class="line"><span class="comment">// 下面这个要特别注意，下面这个不是数字 12345，而是字符串 '12345'</span></span><br><span class="line"><span class="comment">// 他们是有区别的，后面我们会提到</span></span><br><span class="line"><span class="keyword">var</span> str4 = <span class="string">'12345'</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在这里一定要注意的就是 <code>字符串的 &#39;12345&#39;</code> 和 <code>数字12345</code> 是不一样的，他们在js中是两种数据类型，不完全一样</li>
+<li>不能把 <code>字符串的 &#39;12345&#39;</code> 当作 <code>数字12345</code> 来使用</li>
+</ul>
+<h3 id="字符串中的符号"><a href="#字符串中的符号" class="headerlink" title="字符串中的符号"></a>字符串中的符号</h3><ul>
+<li>说是”特殊符号”，但是其实不是，只不过在字符串中我们用一些有意义的 <code>字母</code> 加上 <code>符号</code> 来表示一个特殊的意义</li>
+</ul>
+<ol>
+<li><p><code>\</code>，在字符串中表示”转译”的意思</p>
+<ul>
+<li>什么是转译，其实说白了就是把一些有意义的字符转换成没有意义的字符，把没有意义的转换成有意义的</li>
+<li>现在我们知道了一件事情，也就是在字符串中 <code>\</code> 是有意义的，就是”转译”的意思，所以想要在字符串中输出一个 <code>\</code> 的话，就不能直接写了</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 想在字符串中书写一个 \，这样写是有问题的，会报错</span></span><br><span class="line"><span class="comment">// var str = '\';</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>我们说了 <code>\</code> 是转译的意思，那么他会把紧挨着他后面的一个字符转译</li>
+<li>紧挨着 <code>\</code> 的是字符 <code>&#39;</code>，而 <code>&#39;</code> 在字符串中代表着字符串边界的意思</li>
+<li>在经过转译之后，那么<code>&#39;</code>，就不再代表字符串边界了，而是一个没有任何意义的 “引号” 而已</li>
+<li>这时我们的字符串就没有后面的边界了，就会报错</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这是输出一个 \ 的正确操作</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">'\\'</span>;</span><br><span class="line"><span class="built_in">console</span>.log( str );</span><br><span class="line"></span><br><span class="line"><span class="comment">// 控制台输出</span></span><br><span class="line"><span class="comment">//=&gt; \</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>这次，因为紧挨着 <code>\</code> 的是一个 <code>\</code>，而 <code>\</code> 在字符串中表示转译的意思，那么第二个有意义的 <code>\</code>，会被第一个 <code>\</code> 转译，转变正一个没有任何意义的 “斜线”</li>
+<li>这个时候就可以在字符串中正确输出了</li>
+<li>要注意，这个时候 <code>\\</code> 其实表示的就是一个经过转译的 “斜线”，其实还是一个字符位置，转译符号是不占位置的</li>
+</ul>
+</li>
+<li><p><code>\s</code>，在字符串中是表示，把没有意义的 <code>s</code> 经过转译符转译，在字符串中就变得有意义了，表示一个 “空格” 的意思</p>
+<ul>
+<li><code>s</code> 在字符串中本身是没有意义的，紧紧只是一个字符而已，但是把一个没有意义的字符，经过转译符以后，就变得有意义了</li>
+<li>如果在字符串中书写 <code>\s</code> 就表示一个空格的意思</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'1\s2\s3'</span>;</span><br><span class="line"><span class="built_in">console</span>.log( str );</span><br><span class="line"></span><br><span class="line"><span class="comment">// 控制台输出</span></span><br><span class="line"><span class="comment">//=&gt; 1 2 3</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>字符 <code>s</code> 被转译以后，变成了 “一个空格”，只要在字符串中出现 <code>\s</code>，那么就是表示 “一个空格” 的意思</li>
+<li>虽然占位是两个字符的位置，但是在输出的时候，就是一个字符的位置，就是 “一个空格” 的意思</li>
+</ul>
+</li>
+<li><p>想在字符串中输出 “引号”，那么我们就需要用到转译了，因为 <code>&#39;</code> 和 <code>&quot;</code> 在字符串中是边界的意思</p>
+<ul>
+<li>我们就需要一个转译了，我们需要把有意义的 <code>&#39; 和 &quot;</code> 通过转译，转成没有意义的简单字符而已</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'神说：\"要有光\"!'</span>;</span><br><span class="line"><span class="built_in">console</span>.log( str );</span><br><span class="line"></span><br><span class="line"><span class="comment">// 控制台输出</span></span><br><span class="line"><span class="comment">//=&gt; 神说："要有光"!</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>我们可以看到，两个引号变成了没有意义的字符出现在字符串里面了</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>其实这个就是字符串中的一些特殊符号</li>
+<li>当然，还有很多，这里就不意义列举了，有意的可以去 google 自己搜索一下就好了</li>
+<li>下面列举一些，大概知道就好<br><img src="/img/字符串/字符串001.png" alt="字符串001"></li>
+</ul>
+<h3 id="字符串中的一个方法-LENGTH"><a href="#字符串中的一个方法-LENGTH" class="headerlink" title="字符串中的一个方法 LENGTH"></a>字符串中的一个方法 LENGTH</h3><ul>
+<li>length，长度的意思，顾名思义，他就是用来检测当前字符串的长度<ul>
+<li>我们随便写一个字符串，想知道有多少个字符组成，那么我们可以一个一个的数一数</li>
+<li>现在字符串提供给我们一个方法，叫做 <code>length</code>，可以帮我们直接获取到当前字符串的长度</li>
+</ul>
+</li>
+</ul>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'abcd'</span>;</span><br><span class="line"><span class="keyword">var</span> num = str.length;</span><br><span class="line"><span class="built_in">console</span>.log( num );</span><br><span class="line"></span><br><span class="line"><span class="comment">// 控制台输出</span></span><br><span class="line"><span class="comment">//=&gt; 4</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>这样就会直接把字符串的长度输出了</li>
+<li>但是要注意一个东西，那就是转译符，虽然写的时候占位是两个，但是输出的时候就是一个</li>
+</ul>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'1\s2\s3'</span>;</span><br><span class="line"><span class="built_in">console</span>.log( str.length );</span><br><span class="line"></span><br><span class="line"><span class="comment">// 控制台输出</span></span><br><span class="line"><span class="comment">//=&gt; 5</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>这个时候，输出的就是 5，因为 <code>\s</code> 算做一个字符 “一个空格”</li>
+</ul>
+<h3 id="字符串的使用-字符串拼接"><a href="#字符串的使用-字符串拼接" class="headerlink" title="字符串的使用 - 字符串拼接"></a>字符串的使用 - 字符串拼接</h3><ul>
+<li>字符串拼接，顾名思义就是把两个字符串拼接到一起<ul>
+<li>比如已知一个字符串 <code>abc</code>，第二个字符串 <code>123</code>，现在想得到一个两个拼接到一起的字符串</li>
+<li>得到一个字符串 <code>abc123</code>，这个时候我们就用到字符串拼接了</li>
+<li>在JS中字符串拼接是一个特别简单的事情，那就是使用 <code>+</code> 就可以了</li>
+</ul>
+</li>
+</ul>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">'abc'</span>;</span><br><span class="line"><span class="keyword">var</span> str2 = <span class="string">'123'</span>;</span><br><span class="line"><span class="keyword">var</span> str = str1 + str2;</span><br><span class="line"><span class="built_in">console</span>.log( str );</span><br><span class="line"></span><br><span class="line"><span class="comment">// 控制台输出</span></span><br><span class="line"><span class="comment">//=&gt; abc123</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>这样就做到了字符串拼接，我们就可以得到一个由两个字符串拼接所组成的字符串</li>
+<li>但是这里有点需要注意的地方，就是我们的 <code>+</code> 这个玩意</li>
+<li>这个在JS中有两个意思<ul>
+<li>数学运算：只有当 <code>+</code> 两边都是数字的时候，才会进行数学运算求和</li>
+<li>字符串拼接：只要 <code>+</code> 有一边是字符串，就会默认把另一边的东西也转换成字符串，然后进行字符串拼接</li>
+</ul>
+</li>
+<li>所以在JS中使用 <code>+</code> 的时候，一定要注意两边的内容<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">'1'</span> + <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log( str1 ); <span class="comment">//=&gt; 11</span></span><br><span class="line"><span class="keyword">var</span> str2 = <span class="string">'1'</span> + <span class="string">'2'</span>;</span><br><span class="line"><span class="built_in">console</span>.log( str2 ); <span class="comment">//=&gt; 12</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">1</span> + <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log( num ); <span class="comment">//=&gt; 3</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="字符串的索引值"><a href="#字符串的索引值" class="headerlink" title="字符串的索引值"></a>字符串的索引值</h3><ul>
+<li>索引（也叫下标），就是字符串中对应位置的编号<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'abcdefg'</span>;</span><br><span class="line"><span class="comment">// 上面是一个字符串，就对应了索引 0 1 2 3 4 5 6</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>注意一个问题，索引从 0 开始，也就是说，字符 <code>a</code> 的索引（下标）就是 0，字符 <code>b</code> 的索引（下标）就是 1，以此类推</li>
+<li>一个字符串中索引的最大值就是 “字符串的长度 - 1”，也就是从 <code>0</code> 到 <code>length -1</code></li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>字符串就是用 <code>&#39;</code> 或者 <code>&quot;</code> 包裹的所有内容都叫做字符串<ul>
+<li>在JS中我们推荐使用 <code>&#39;</code></li>
+</ul>
+</li>
+<li>字符串里面有一些”特殊符号”，其实就是经过转译的一些字符而已<ul>
+<li>在JS中 <code>\</code> 就是转译的意思</li>
+<li>不是所有的字符都可以被转译，这里要注意一下</li>
+</ul>
+</li>
+<li>字符串中有一个属性叫做 <code>length</code>，是用来获取字符串的长度的</li>
+<li>字符串拼接我们使用 <code>+</code><ul>
+<li>一定要注意 <code>+</code> 两边的内容</li>
+</ul>
+</li>
+<li>字符串的索引<ul>
+<li>注意从 0 开始，意义对应</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2016/01/06/JS中的基本数据类型-字符串/">JS中的基本数据类型-字符串</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">郭翔</a></p>
+        <p><span>Created:</span>2016-01-06, 22:55:44</p>
+        <p><span>Updated:</span>2018-04-25, 16:55:59</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2016/01/06/JS中的基本数据类型-字符串/" title="JS中的基本数据类型-字符串">https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/01/06/JS中的基本数据类型-字符串/</a>
+            <span class="copy-path" data-clipboard-text="From https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/01/06/JS中的基本数据类型-字符串/　　By 郭翔" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/01/07/使用git在GitHub上托管代码/">
+                    使用git在GitHub上托管代码
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/01/06/JS中的基本数据类型-数值/">
+                    JS中的基本数据类型-数值
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JS中的基本数据类型"><span class="toc-number">1.</span> <span class="toc-text">JS中的基本数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#String（字符串）"><span class="toc-number">1.1.</span> <span class="toc-text">String（字符串）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串的字面量形式"><span class="toc-number">1.1.1.</span> <span class="toc-text">字符串的字面量形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串中的符号"><span class="toc-number">1.1.2.</span> <span class="toc-text">字符串中的符号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串中的一个方法-LENGTH"><span class="toc-number">1.1.3.</span> <span class="toc-text">字符串中的一个方法 LENGTH</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串的使用-字符串拼接"><span class="toc-number">1.1.4.</span> <span class="toc-text">字符串的使用 - 字符串拼接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串的索引值"><span class="toc-number">1.1.5.</span> <span class="toc-text">字符串的索引值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">1.2.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"JS中的基本数据类型-字符串　| 郭翔的itcast博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/01/07/使用git在GitHub上托管代码/" title="Pre: 使用git在GitHub上托管代码">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/01/06/JS中的基本数据类型-数值/" title="Next: JS中的基本数据类型-数值">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/10/git的常用指令/">git的常用指令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/10/github的常用功能介绍/">github的常用功能介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/08/WebStorm安装/">WebStorm安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/布局方式-flex布局/">布局方式 - flex布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/解构赋值/">解构赋值</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制之循环结构/">流程控制之循环结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制之分支结构/">流程控制之分支结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制/">流程控制</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/unicode字符集/">unicode字符集</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/JS中的内置对象-String的常用方法/">JS中的内置对象-String的常用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/使用git在GitHub上托管代码/">使用git在GitHub上托管代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-字符串/">JS中的基本数据类型-字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-数值/">JS中的基本数据类型-数值</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/git安装和配置/">git安装和配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-空/">JS中的基本数据类型-空</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-布尔/">JS中的基本数据类型-布尔</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/封装简单版全兼容ajax/">封装简单版全兼容ajax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/变量的命名规则和规范/">变量的命名规则和规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/Node-js安装/">Node.js安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/JS中的数据类型/">JS中的数据类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/JS中的变量/">JS中的变量</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/JS中的注释/">JS中的注释</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/02/如何在HTML页面引入JavaScript/">如何在HTML页面引入JavaScript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/01/JavaScript脚本语言/">JavaScript脚本语言</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 郭翔
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+             title: "a.article-title, .article-more-link a", 
+            
+             tags: ".article-tag a", 
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
