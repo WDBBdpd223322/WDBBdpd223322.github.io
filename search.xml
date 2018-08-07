@@ -3,11 +3,23 @@
   
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2018/08/07/hello-world/"/>
-      <url>/2018/08/07/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      <title>JavaScript脚本语言</title>
+      <link href="/2016/01/01/JavaScript%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80/"/>
+      <url>/2016/01/01/JavaScript%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80/</url>
+      <content type="html"><![CDATA[<h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><p><img src="/img/前端.jpg" alt="JavaScript"></p><h2 id="JavaScript-的由来"><a href="#JavaScript-的由来" class="headerlink" title="JavaScript 的由来"></a>JavaScript 的由来</h2><ul><li>Netscape在最初将其脚本语言命名为LiveScript，后来Netscape在与Sun合作之后将其改名为JavaScript。JavaScript最初受Java启发而开始设计的，目的之一就是“看上去像Java”，因此语法上有类似之处，一些名称和命名规范也借自Java。JavaScript与Java名称上的近似，是当时Netscape为了营销考虑与Sun微系统达成协议的结果。Java和JavaScript的关系就像张雨和张雨生的关系，只是名字很像<ul><li>Java  服务器端的编程语言</li><li>JavaScript  运行在客户端(浏览器)的编程语言，现在 JS 也可以运行在服务器端（nodeJS）这都是后话了</li><li><blockquote><p>JavaScript的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能   </p></blockquote></li></ul></li></ul><h2 id="JavaScript最初的目的"><a href="#JavaScript最初的目的" class="headerlink" title="JavaScript最初的目的"></a>JavaScript最初的目的</h2><ul><li>最初的目的是为了处理表单的验证操作</li></ul><h2 id="JavaScript现在的意义-应用场景"><a href="#JavaScript现在的意义-应用场景" class="headerlink" title="JavaScript现在的意义(应用场景)"></a>JavaScript现在的意义(应用场景)</h2><ul><li><p>JavaScript 发展到现在几乎无所不能。</p><ol><li>网页特效</li><li>服务端开发(Node.js)</li><li>命令行工具(Node.js)</li><li>桌面程序(Electron)</li><li>App(Cordova)</li><li>控制硬件-物联网(Ruff)</li><li>游戏开发(cocos2d-js)</li><li>…</li></ol></li></ul><h2 id="JavaScript和HTML、CSS的区别"><a href="#JavaScript和HTML、CSS的区别" class="headerlink" title="JavaScript和HTML、CSS的区别"></a>JavaScript和HTML、CSS的区别</h2><ol><li>HTML：提供网页的结构，提供网页中的内容</li><li>CSS: 用来美化网页</li><li>JavaScript: 可以用来控制网页内容，给网页增加动态的效果</li></ol><h2 id="JavaScript的组成"><a href="#JavaScript的组成" class="headerlink" title="JavaScript的组成"></a>JavaScript的组成</h2><ol><li><p>ECMAScript - JavaScript的核心</p><p>ECMA 欧洲计算机制造联合会</p><p>网景：JavaScript</p><p>微软：JScript</p><p>定义了JavaScript的语法规范  </p><p>JavaScript的核心，描述了语言的基本语法和数据类型，ECMAScript是一套标准，定义了一种语言的标准与具体实现无关</p></li><li><p>BOM - 浏览器对象模型</p><p>一套操作浏览器功能的API</p><p>通过BOM可以操作浏览器窗口，比如：弹出框、控制浏览器跳转、获取分辨率等 </p></li><li><p>DOM - 文档对象模型</p><p>一套操作页面元素的API</p><p>DOM可以把HTML看做是文档树，通过DOM提供的API可以对树上的节点进行操作</p></li></ol><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul><li>JavaScript 和 JAVA 没有关系</li><li>JavaScript 就是在客户端（浏览器）的 JavaScript引擎中运行</li><li>JavaScript 的语法规范是 ECMAScript 来制定的</li><li>JavaScript 依靠操作 BOM 和 DOM 来完成一些动态的效果</li></ul>]]></content>
       
+      <categories>
+          
+          <category> Front-end Engineer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript基础 </tag>
+            
+        </tags>
       
     </entry>
     
