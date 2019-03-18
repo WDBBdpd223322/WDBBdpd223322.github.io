@@ -23,14 +23,12 @@
 <meta property="og:site_name" content="郭翔的itcast博客">
 <meta property="og:description" content="常用的布局方式 - flex布局">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://github.com/img/flex/flex001.png">
-<meta property="og:image" content="https://github.com/img/flex/flex002.png">
-<meta property="og:image" content="https://github.com/img/flex/flex003.png">
-<meta property="og:updated_time" content="2018-05-29T07:05:16.821Z">
+<meta property="og:image" content="https://github.com/img/flex/flex000.png">
+<meta property="og:updated_time" content="2018-09-13T01:53:13.445Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="布局方式 - flex布局">
 <meta name="twitter:description" content="常用的布局方式 - flex布局">
-<meta name="twitter:image" content="https://github.com/img/flex/flex001.png">
+<meta name="twitter:image" content="https://github.com/img/flex/flex000.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -194,7 +192,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6-语法/">ES6 语法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5C3/">H5C3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript基础/">JavaScript基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJS/">NodeJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebStorm/">WebStorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git和github/">git和github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unicode字符集/">unicode字符集</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6-语法/">ES6 语法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5C3/">H5C3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript基础/">JavaScript基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJS/">NodeJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebStorm/">WebStorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git和github/">git和github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unicode字符集/">unicode字符集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具使用/">工具使用</a></li></ul>
                     </div>
                 </section>
                 
@@ -315,79 +313,32 @@
 <li>2009年，W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</li>
 <li>Flex布局将成为未来布局的首选方案</li>
 </ul>
-<h2 id="Flex布局的语法介绍"><a href="#Flex布局的语法介绍" class="headerlink" title="Flex布局的语法介绍"></a>Flex布局的语法介绍</h2><ul>
-<li>接下来我们就来一个一个的介绍一下 flex 布局中的所有语法</li>
-<li>先来准备一个基础解构，接下来如果没有特殊说明，都是使用这个基础解构<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">   * &#123;</span></span><br><span class="line"><span class="undefined">     margin: 0;</span></span><br><span class="line"><span class="undefined">     padding: 0;</span></span><br><span class="line"><span class="undefined">     list-style: none;</span></span><br><span class="line"><span class="undefined">   &#125;</span></span><br><span class="line"><span class="undefined">   </span></span><br><span class="line"><span class="undefined">   ul &#123;</span></span><br><span class="line"><span class="undefined">     width: 600px;</span></span><br><span class="line"><span class="undefined">     height: 400px;</span></span><br><span class="line"><span class="css">     <span class="selector-tag">border</span>: 10<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#333</span>;</span></span><br><span class="line"><span class="undefined">     margin: 100px auto;</span></span><br><span class="line"><span class="undefined">   &#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="初始化一个布局方案"><a href="#初始化一个布局方案" class="headerlink" title="初始化一个布局方案"></a>初始化一个布局方案</h2><ul>
+<li>先来准备一个基础结构，接下来如果没有特殊说明，都是使用这个基础结构</li>
+<li><p>因为弹性布局就是一种布局方案而已，我们就直接在这个结构上面进行操作就好</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">   * &#123;</span></span><br><span class="line"><span class="undefined">     margin: 0;</span></span><br><span class="line"><span class="undefined">     padding: 0;</span></span><br><span class="line"><span class="undefined">     list-style: none;</span></span><br><span class="line"><span class="undefined">   &#125;</span></span><br><span class="line"><span class="undefined">   </span></span><br><span class="line"><span class="undefined">   ul &#123;</span></span><br><span class="line"><span class="undefined">     width: 600px;</span></span><br><span class="line"><span class="undefined">     height: 400px;</span></span><br><span class="line"><span class="css">     <span class="selector-tag">border</span>: 10<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#333</span>;</span></span><br><span class="line"><span class="undefined">     margin: 100px auto;</span></span><br><span class="line"><span class="undefined">   &#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/img/flex/flex000.png" alt="flex000"></p>
 </li>
 </ul>
 <ul>
-<li>这个就是一个基础解构，我们接下来将使用 <code>flex</code> 布局来对这个解构进行各种布局</li>
-<li>这个解构就是一个简单的 <code>ul</code> 在页面横向居中，我们主要是来玩里面的 li</li>
+<li>这个就是一个基础结构，我们接下来将使用 <code>flex</code> 布局来对这个解构进行各种布局</li>
+<li>这个结构就是一个简单的 <code>ul</code> 在页面横向居中，我们主要是来玩里面的 <code>li</code></li>
 </ul>
 <h3 id="开启弹性布局"><a href="#开启弹性布局" class="headerlink" title="开启弹性布局"></a>开启弹性布局</h3><ul>
-<li>我们想使用 flex 布局，需要先开启弹性布局，也就是把元素变成弹性元素以后，在进行使用</li>
-<li>就好像我们想给一个行内元素设置宽高，需要先把元素变成一个块级元素或者行内块级元素再进行设置是一个道理</li>
-<li>开启弹性布局我们使用 <code>display: flex;</code><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> &#123;</span><br><span class="line"> <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li>上面就是开启弹性布局</li>
-<li>这个把元素设置为弹性元素是什么意思呢？<ul>
-<li><strong>这个开启弹性盒子并不会改变元素自身在标注文档流里面的占位方式</strong></li>
-<li><strong>而是改变了当前元素下所有 子级元素 的文档流占位</strong></li>
-</ul>
-</li>
-<li>比如上面这个解构<ul>
-<li>在开启了弹性以后，没有改变 <code>ul</code> 在文档流里面的占位，<code>ul</code> 该怎么样还是怎么样</li>
-<li>而下面所有的 <code>li</code> 都改变了原先的占位方式</li>
-</ul>
-</li>
-<li>在没有开启 <code>flex</code> 的时候，<code>li</code> 应该是从上向下顺序排列</li>
-<li>在开启了 <code>flex</code> 以后，<code>li</code> 就会按照 <strong>主轴</strong> 的方向排列</li>
-</ul>
-<ul>
-<li>现在，我们在浏览器里面还看不到效果，是因为当一个元素开启了 <code>flex</code> 以后，会有一些默认的情况出现<ol>
-<li>默认主轴的方向是从左到右</li>
-<li>会自动设置所有 子级元素 的 <code>height</code>，但是不会设置 <code>width</code>（如果其子元素自己有设置 <code>height</code> 的话，那么这个默认值就没有用了）<ul>
-<li>如果其子元素没有设置 <code>height</code> 的话，会自动把所有子元素的高变成自己的 <code>height</code></li>
-</ul>
-</li>
-<li>默认所有子元素在一行排列，不会进行换行</li>
-<li>当所有子元素的 <code>width</code> 加起来超过自己本身的 <code>width</code> 以后，不会溢出盒子<ul>
-<li>默认不会溢出盒子，会把所有子元素的 <code>width</code> 压缩，然他们依旧在自己的范围内，不会溢出</li>
-</ul>
-</li>
-<li>所染会挤压所有的子元素和 <code>width</code>，但是如果子元素内有内容的话，不会继续挤压<ul>
-<li>当子元素内有内容的时候，那么这个子元素被挤压的最小的 <code>width</code> 就是内容的 <code>width</code>，不会再小了</li>
-<li>当子元素内没有内容的时候，那么就会被无限挤压</li>
-</ul>
-</li>
+<li>想要使用弹性布局，我们想要把一个元素变成一个弹性元素</li>
+<li>我们使用 <code>display: flex;</code> 开启弹性元素</li>
+<li>开启弹性元素需要注意的几个点：<ol>
+<li><code>flex</code> 和 <code>block / inline-block / inline</code> 是平起平坐的关系，他们是一样的</li>
+<li>一个元素如果是弹性元素了，就不能说他是块级元素或者什么，他就是弹性元素</li>
+<li>开启弹性元素，不影响该元素本身在文档流中的占位关系，该元素应该怎么占位就怎么占位</li>
+<li>与浮动定位都不冲突，该元素是浮动还是定位都不会影响，该怎么样就怎么样</li>
 </ol>
 </li>
-</ul>
-<ul>
-<li>说了这么多，我们先来看看效果<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> &#123;</span><br><span class="line"> <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>写了一大堆，好像都看不懂，我们先来简单的看一波占位关系</p>
 </li>
-</ul>
-<p> <img src="/img/flex/flex001.png" alt="flex001"></p>
-<ul>
-<li>开启了 <code>flex</code> 以后，我们会看到，<code>ul</code> 里面的每一个 <code>li</code> 都被自动设置了一个 <code>height</code>，但是没有 <code>width</code></li>
-<li>接下来我们给 <code>li</code> 设置一下 <code>width</code>试试看<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span> &#123;</span><br><span class="line"> <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line"> <span class="attribute">background-color</span>: pink;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>正常元素占位</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">   <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(1)</span> &#123;</span></span><br><span class="line"><span class="undefined">     </span></span><br><span class="line"><span class="undefined">   &#125;</span></span><br><span class="line"><span class="css">   <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(2)</span> &#123;&#125;</span></span><br><span class="line"><span class="css">   <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(3)</span> &#123;&#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<p> <img src="/img/flex/flex002.png" alt="flex002"></p>
-<ul>
-<li>我们会发现，每一个 <code>li</code> 都横向排列了（其实这里是按照 <code>ul</code> 的主轴方向）</li>
-<li>之前我们不止一次提到过主轴这个词，接下来我们就先看看什么是主轴</li>
-</ul>
-<p> <img src="/img/flex/flex003.png" alt="felx003"></p>
-<ul>
-<li>当一个元素开启了 <code>flex</code> 以后，会自动出现两个轴<ol>
-<li>主轴： 默认是从左到右</li>
-<li>副轴： 默认是从上到下（副轴永远垂直于主轴）</li>
-</ol>
-</li>
-<li>加下来我们把 <code>li</code> 的 <code>width</code> 设置的大一些<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span> &#123;</span><br><span class="line"> <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -400,7 +351,7 @@
         <p><span>Title:</span><a href="/2016/02/01/布局方式-flex布局/">布局方式 - flex布局</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">郭翔</a></p>
         <p><span>Created:</span>2016-02-01, 13:53:58</p>
-        <p><span>Updated:</span>2018-05-29, 15:05:16</p>
+        <p><span>Updated:</span>2018-09-13, 09:53:13</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/2016/02/01/布局方式-flex布局/" title="布局方式 - flex布局">https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/02/01/布局方式-flex布局/</a>
             <span class="copy-path" data-clipboard-text="From https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2016/02/01/布局方式-flex布局/　　By 郭翔" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
@@ -416,8 +367,8 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/04/08/WebStorm安装/">
-                    WebStorm安装
+                <a href="/2016/04/11/json-server的配置和使用1/">
+                    json-server的配置和使用1
                 </a>
             </div>
         
@@ -436,7 +387,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一种相当好用的布局方式-FLEX"><span class="toc-number">1.</span> <span class="toc-text">一种相当好用的布局方式 FLEX</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Flex布局的语法介绍"><span class="toc-number">1.1.</span> <span class="toc-text">Flex布局的语法介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#开启弹性布局"><span class="toc-number">1.1.1.</span> <span class="toc-text">开启弹性布局</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一种相当好用的布局方式-FLEX"><span class="toc-number">1.</span> <span class="toc-text">一种相当好用的布局方式 FLEX</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化一个布局方案"><span class="toc-number">1.1.</span> <span class="toc-text">初始化一个布局方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#开启弹性布局"><span class="toc-number">1.1.1.</span> <span class="toc-text">开启弹性布局</span></a></li></ol></li></ol></li></ol>
         
     </div>
     <style>
@@ -492,7 +443,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/04/08/WebStorm安装/" title="Pre: WebStorm安装">
+            <a href="/2016/04/11/json-server的配置和使用1/" title="Pre: json-server的配置和使用1">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -506,7 +457,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/10/git的常用指令/">git的常用指令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/10/github的常用功能介绍/">github的常用功能介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/08/WebStorm安装/">WebStorm安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/布局方式-flex布局/">布局方式 - flex布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/解构赋值/">解构赋值</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制之循环结构/">流程控制之循环结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制之分支结构/">流程控制之分支结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制/">流程控制</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/unicode字符集/">unicode字符集</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/JS中的内置对象-String的常用方法/">JS中的内置对象-String的常用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/使用git在GitHub上托管代码/">使用git在GitHub上托管代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-字符串/">JS中的基本数据类型-字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-数值/">JS中的基本数据类型-数值</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/git安装和配置/">git安装和配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-布尔/">JS中的基本数据类型-布尔</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-空/">JS中的基本数据类型-空</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/封装简单版全兼容ajax/">封装简单版全兼容ajax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/变量的命名规则和规范/">变量的命名规则和规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/Node-js安装/">Node.js安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/JS中的数据类型/">JS中的数据类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/JS中的变量/">JS中的变量</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/JS中的注释/">JS中的注释</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/02/如何在HTML页面引入JavaScript/">如何在HTML页面引入JavaScript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/01/JavaScript脚本语言/">JavaScript脚本语言</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/10/git的常用指令/">git的常用指令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/10/github的常用功能介绍/">github的常用功能介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/08/WebStorm安装/">WebStorm安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/11/json-server的配置和使用1/">json-server的配置和使用1</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/布局方式-flex布局/">布局方式 - flex布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/解构赋值/">解构赋值</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制之循环结构/">流程控制之循环结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制/">流程控制</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制之分支结构/">流程控制之分支结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/unicode字符集/">unicode字符集</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/JS中的内置对象-String的常用方法/">JS中的内置对象-String的常用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/使用git在GitHub上托管代码/">使用git在GitHub上托管代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-字符串/">JS中的基本数据类型-字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-数值/">JS中的基本数据类型-数值</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/git安装和配置/">git安装和配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-布尔/">JS中的基本数据类型-布尔</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-空/">JS中的基本数据类型-空</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/封装简单版全兼容ajax/">封装简单版全兼容ajax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/变量的命名规则和规范/">变量的命名规则和规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/Node-js安装/">Node.js安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/JS中的数据类型/">JS中的数据类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/JS中的变量/">JS中的变量</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/JS中的注释/">JS中的注释</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/02/如何在HTML页面引入JavaScript/">如何在HTML页面引入JavaScript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/01/JavaScript脚本语言/">JavaScript脚本语言</a></li></ul>
 
 
 
@@ -520,7 +471,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2016-2018 郭翔
+                2016-2019 郭翔
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
