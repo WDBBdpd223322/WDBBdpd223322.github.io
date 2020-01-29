@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="郭翔" />
+
+
+
+<meta name="description" content="MAC 环境下安装 mongodb 数据库">
+<meta name="keywords" content="mongodb 数据库,mongodb 数据库安装">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mongodb数据库安装-MAC">
+<meta property="og:url" content="https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2019/01/01/mongodb数据库安装-MAC/index.html">
+<meta property="og:site_name" content="江湖闲散人员">
+<meta property="og:description" content="MAC 环境下安装 mongodb 数据库">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-01-29T09:11:38.473Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mongodb数据库安装-MAC">
+<meta name="twitter:description" content="MAC 环境下安装 mongodb 数据库">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="江湖闲散人员" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/timg.jpeg">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>mongodb数据库安装-MAC | 江湖闲散人员</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/timg.jpeg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">郭翔</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">下雨天打孩子，闲着也是闲着！</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">home</a></li>
+                        
+                            <li><a href="/archives/">all</a></li>
+                        
+                            <li><a href="/tags/">tags</a></li>
+                        
+                            <li><a href="/about/">aboutme</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:m13301295501_1@163.com" title="Email"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6-语法/">ES6 语法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5C3/">H5C3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript基础/">JavaScript基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJS/">NodeJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue中的组件通讯/">Vue中的组件通讯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue框架/">Vue框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebStorm/">WebStorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git和github/">git和github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb-数据库/">mongodb 数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb-数据库安装/">mongodb 数据库安装</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unicode字符集/">unicode字符集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具使用/">工具使用</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">江湖闲散人员 -- 郭翔</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">郭翔</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/timg.jpeg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">郭翔</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">下雨天打孩子，闲着也是闲着！</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">home</a></li>
+                
+                    <li><a href="/archives/">all</a></li>
+                
+                    <li><a href="/tags/">tags</a></li>
+                
+                    <li><a href="/about/">aboutme</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:m13301295501_1@163.com" title="Email"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-mongodb数据库安装-MAC" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/01/01/mongodb数据库安装-MAC/" class="article-date">
+      <time datetime="2019-01-01T08:48:40.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      mongodb数据库安装-MAC
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Developer-Tools/">Developer Tools</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongodb-数据库/">mongodb 数据库</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongodb-数据库安装/">mongodb 数据库安装</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="MAC-环境下安装-mongodb-数据库"><a href="#MAC-环境下安装-mongodb-数据库" class="headerlink" title="MAC 环境下安装 mongodb 数据库"></a>MAC 环境下安装 mongodb 数据库</h1><ul>
+<li>在Mac 环境下， 安装什么东西好像都特别简单</li>
+<li><code>mongodb</code> 也是不例外， 安装起来也是特别的简单方便</li>
+<li>接下来我们就提供几种安装的方式</li>
+</ul>
+<h2 id="安装-mongodb-方式一"><a href="#安装-mongodb-方式一" class="headerlink" title="安装 mongodb 方式一"></a>安装 mongodb 方式一</h2><ul>
+<li>如果你的电脑有 <code>homebrew</code> 那就再简单不过了<ul>
+<li><code>homebrew</code> 就是 mac 环境下最简单的安装一些软件的工具</li>
+<li>就好像我们在前端使用 <code>npm</code> 安装一些依赖一样</li>
+<li><code>homebrew</code> 就可以在 mac 环境下快速安装一些软件</li>
+</ul>
+</li>
+<li>如果你的电脑没有 <code>homebrew</code> 那么建议你安装一个<ul>
+<li>安装 <code>homebrew</code> 需要一个比较好的网络环境</li>
+<li>因为文件比较大， 并且地址在国外</li>
+<li>还有一个问题就是需要一个 <code>xcode</code> 环境</li>
+</ul>
+</li>
+<li>如果你的电脑没有 <code>xcode</code> 环境怎么办<ul>
+<li>没有关系， 因为在安装 <code>homebrew</code> 的时候会直接帮你安装</li>
+<li>我们只是需要在安装 <code>homebrew</code> 的过程中时常关注一下就好</li>
+</ul>
+</li>
+<li>接下来就说一下 <code>homebrew</code> 的安装方式</li>
+</ul>
+<h3 id="homebrew-的安装方式"><a href="#homebrew-的安装方式" class="headerlink" title="homebrew 的安装方式"></a>homebrew 的安装方式</h3><ol>
+<li>打开你的终端</li>
+<li><p>输入指令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>他会需要你输入一个密码， 就是你的开机密码</p>
+<ul>
+<li>在你输入的时候， 你会看到终端上什么都没显示</li>
+<li>好像没有输入一样， 不用担心， 他就是不显示出来的</li>
+<li>你只要照常输入， 输入完毕后按下回车键就好了</li>
+</ul>
+</li>
+<li>漫长的等待过程<ul>
+<li>什么也不用管， 他会自己安装好的</li>
+<li>如果你没有 <code>xcode</code> 环境， 那么你就时常关注</li>
+<li>中间他会提示你安装 <code>xcode</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="mongodb-安装"><a href="#mongodb-安装" class="headerlink" title="mongodb 安装"></a>mongodb 安装</h3><ul>
+<li>说了一堆的废话， 终于可以进入到正题了， 安装 <code>mongodb</code></li>
+<li>有了 <code>homebrew</code> 以后， 我们就直接安装就好了</li>
+<li>因为最近 <code>mongodb</code> 有了自己的镜像源地址</li>
+<li>我们不能直接使用 <code>homebrew</code> 安装了，需要配置一下地址</li>
+<li>不用担心，很简单的<ul>
+<li>打开终端</li>
+<li>输入指令 <code>$ brew tap mongodb/brew</code></li>
+<li>按下回车就好了</li>
+<li>这个不会影响你用 <code>homebrew</code> 安装别的软件</li>
+<li>只是添加一个下载 <code>mongodb</code> 的新的镜像源地址</li>
+</ul>
+</li>
+<li>修改过镜像源地址以后， 就可以使用 <code>homebrew</code> 安装了<ul>
+<li>打开终端</li>
+<li>输入指令 <code>$ brew install mongodb-community@4.0</code></li>
+<li>按下回车， 等待就好了</li>
+<li>一段时间以后， 你的 <code>mongodb</code> 就安装好了</li>
+</ul>
+</li>
+<li>注意： <strong>目前不建议安装 4.2 版本的， 因为都是坑</strong><ul>
+<li>安装一个 4.0 版本的够用就可以了</li>
+</ul>
+</li>
+<li>使用 <code>homebrew</code> 安装 <code>mongodb</code> 可以参考下面文档<ul>
+<li><a href="https://github.com/mongodb/homebrew-brew">参考文档</a></li>
+</ul>
+</li>
+<li>至此， <code>mongodb</code> 数据库已经安装完毕了</li>
+<li>使用 <code>homebrew</code> 安装完毕以后<ul>
+<li>我们必须要清楚我们的 <code>mongodb</code> 安装在了哪里</li>
+<li>不然后期我们使用的时候就会麻烦了</li>
+</ul>
+</li>
+</ul>
+<h3 id="mongodb-安装在了哪里"><a href="#mongodb-安装在了哪里" class="headerlink" title="mongodb 安装在了哪里"></a>mongodb 安装在了哪里</h3><ul>
+<li>安装在了 <code>/usr/local/Cellar</code> 这个目录下<ul>
+<li><code>/usr</code> 这个目录在电脑里面看不到</li>
+<li>我们直接在电脑桌面按下 <code>command + shift + g</code></li>
+<li>输入 <code>/usr/local</code> 按下回车， 就可以</li>
+</ul>
+</li>
+<li>然后我们就可以看到 <code>Cellar</code> 文件夹了， 点进去就好<ul>
+<li>这个文件夹是 <code>homebrew</code> 安装软件的文件夹</li>
+<li>你使用 <code>homebrew</code> 安装的软件都在这里</li>
+</ul>
+</li>
+<li>接下来有一个叫做 <code>mongodbxxxxx</code> 后面记不清了<ul>
+<li>总之就是一个很长的名字，这个文件夹名字太长了</li>
+<li>不利于我们使用， 修改成 <code>mongodb</code> 或者什么的都行</li>
+<li>就是为了方便使用， 没有什么大事</li>
+</ul>
+</li>
+<li>我们的 <code>mongodb</code> 就安装在了这里</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2019/01/01/mongodb数据库安装-MAC/">mongodb数据库安装-MAC</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">郭翔</a></p>
+        <p><span>Created:</span>2019-01-01, 16:48:40</p>
+        <p><span>Updated:</span>2020-01-29, 17:11:38</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2019/01/01/mongodb数据库安装-MAC/" title="mongodb数据库安装-MAC">https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2019/01/01/mongodb数据库安装-MAC/</a>
+            <span class="copy-path" data-clipboard-text="From https://github.com/WDBBdpd223322/WDBBdpd223322.github.io.git/2019/01/01/mongodb数据库安装-MAC/　　By 郭翔" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/04/10/git的常用指令/">
+                    git的常用指令
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MAC-环境下安装-mongodb-数据库"><span class="toc-number">1.</span> <span class="toc-text">MAC 环境下安装 mongodb 数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-mongodb-方式一"><span class="toc-number">1.1.</span> <span class="toc-text">安装 mongodb 方式一</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#homebrew-的安装方式"><span class="toc-number">1.1.1.</span> <span class="toc-text">homebrew 的安装方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mongodb-安装"><span class="toc-number">1.1.2.</span> <span class="toc-text">mongodb 安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mongodb-安装在了哪里"><span class="toc-number">1.1.3.</span> <span class="toc-text">mongodb 安装在了哪里</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"mongodb数据库安装-MAC　| 江湖闲散人员　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/04/10/git的常用指令/" title="Next: git的常用指令">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/01/01/mongodb数据库安装-MAC/">mongodb数据库安装-MAC</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/10/git的常用指令/">git的常用指令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/10/github的常用功能介绍/">github的常用功能介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/08/WebStorm安装/">WebStorm安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/01/Vue组件间通讯-父传子/">Vue组件间通讯-父传子</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/11/json-server的配置和使用1/">json-server的配置和使用1</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/布局方式-flex布局/">布局方式 - flex布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/解构赋值/">解构赋值</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制之循环结构/">流程控制之循环结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制/">流程控制</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/流程控制之分支结构/">流程控制之分支结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/unicode字符集/">unicode字符集</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/JS中的内置对象-String的常用方法/">JS中的内置对象-String的常用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/使用git在GitHub上托管代码/">使用git在GitHub上托管代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-字符串/">JS中的基本数据类型-字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-数值/">JS中的基本数据类型-数值</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/git安装和配置/">git安装和配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-布尔/">JS中的基本数据类型-布尔</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/JS中的基本数据类型-空/">JS中的基本数据类型-空</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/封装简单版全兼容ajax/">封装简单版全兼容ajax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/变量的命名规则和规范/">变量的命名规则和规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/Node-js安装/">Node.js安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/JS中的数据类型/">JS中的数据类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/JS中的变量/">JS中的变量</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/JS中的注释/">JS中的注释</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/02/如何在HTML页面引入JavaScript/">如何在HTML页面引入JavaScript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/01/JavaScript脚本语言/">JavaScript脚本语言</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2020 郭翔
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+             title: "a.article-title, .article-more-link a", 
+            
+             tags: ".article-tag a", 
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
